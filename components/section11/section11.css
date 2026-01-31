@@ -6,7 +6,7 @@
 
 /* Upper Section - White Background */
 .section11-upper {
-    background: white;
+    background: #7a3f05;
     padding: 4rem 2rem;
     display: flex;
     justify-content: center;
@@ -47,7 +47,7 @@
 
 .section11-address {
     font-size: 0.95rem;
-    color: #000;
+    color: #fff;
     font-family: 'Arial', sans-serif;
     font-weight: 400;
     line-height: 1.6;
@@ -130,7 +130,7 @@
 .section11-social-icon {
     width: 24px;
     height: 24px;
-    color: #7a3f05;
+    color: #fff;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
