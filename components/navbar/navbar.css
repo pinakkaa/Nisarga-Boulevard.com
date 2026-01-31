@@ -6,14 +6,15 @@
     z-index: 1000;
     transition: all 0.3s ease-in-out;
     padding: 0;
-    background: rgba(139, 21, 56, 0.3);
+    /* background: rgba(139, 21, 56, 0.3); */
+    background: #7a3f059b;
     backdrop-filter: blur(10px);
     border-top: 3px solid #1A4D4D;
 }
 
 /* Scrolled state - solid dark red */
 .navbar.scrolled {
-    background: #6B0F2A;
+    background: #7a3f05;
     border-top: none;
 }
 
@@ -66,7 +67,7 @@
 
 /* Enquire Button */
 .enquire-button {
-    background: #8B1538;
+    background: #7a3f05;
     color: white;
     border: none;
     padding: 0.75rem 2rem;
@@ -82,7 +83,7 @@
 
 .navbar.scrolled .enquire-button {
     background: white;
-    color: #6B0F2A;
+    color: #7a3f05;
 }
 
 .enquire-button:hover {
@@ -134,7 +135,7 @@
 
 .mobile-enquire-button {
     background: white;
-    color: #6B0F2A;
+    color: #7a3f05;
     border: none;
     padding: 0.75rem 2rem;
     font-size: 0.9rem;

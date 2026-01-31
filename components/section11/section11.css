@@ -97,11 +97,11 @@
 }
 
 .section11-view-all:hover {
-    color: #8B1538;
+    color: #7a3f05;
 }
 
 .section11-arrow {
-    color: #8B1538;
+    color: #7a3f05;
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -130,7 +130,7 @@
 .section11-social-icon {
     width: 24px;
     height: 24px;
-    color: #8B1538;
+    color: #7a3f05;
     cursor: pointer;
     transition: opacity 0.3s ease;
 }
@@ -179,7 +179,7 @@
 
 /* Bottom Section - Maroon Background */
 .section11-bottom {
-    background: #8B1538;
+    background: #7a3f05;
     padding: 1.5rem 2rem;
     display: flex;
     justify-content: center;

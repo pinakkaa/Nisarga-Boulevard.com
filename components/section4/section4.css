@@ -139,7 +139,8 @@
     content: '';
     width: 8px;
     height: 8px;
-    background: #8B1538;
+    /* background: #8B1538; */
+    background: #7a3f05;
     border-radius: 50%;
     flex-shrink: 0;
     margin-top: 0.5rem;

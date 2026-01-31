@@ -43,7 +43,7 @@
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem 2.5rem;
-    border: 1px solid #8B1538;
+    border: 1px solid #7a3f05;
     background: transparent;
     color: #333;
     font-size: 0.9rem;
@@ -65,7 +65,7 @@
 }
 
 .download-brochure-button:hover {
-    background: #8B1538;
+    background: #7a3f05;
     color: white;
 }
 
