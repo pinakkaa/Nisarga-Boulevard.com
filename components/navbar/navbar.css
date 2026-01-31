@@ -1,0 +1,180 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+    background: rgba(139, 21, 56, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 3px solid #1A4D4D;
+}
+
+/* Scrolled state - solid dark red */
+.navbar.scrolled {
+    background: #6B0F2A;
+    border-top: none;
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    gap: 2rem;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-image {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    /* gap: 2.5rem; */
+    align-items: center;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Enquire Button */
+.enquire-button {
+    background: #8B1538;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    white-space: nowrap;
+}
+
+.navbar.scrolled .enquire-button {
+    background: white;
+    color: #6B0F2A;
+}
+
+.enquire-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(107, 15, 42, 0.98);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+}
+
+.mobile-enquire-button {
+    background: white;
+    color: #6B0F2A;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .nav-links {
+        display: none;
+    }
+
+    .enquire-button {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar-container {
+        padding: 1.2rem 1.5rem;
+    }
+
+    .logo-image {
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 1rem;
+    }
+
+    .logo-image {
+        height: 45px;
+    }
+}

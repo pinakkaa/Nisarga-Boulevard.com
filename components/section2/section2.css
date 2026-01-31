@@ -1,0 +1,145 @@
+.section2 {
+    width: 100%;
+    background: white;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section2-container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Left Section - Text Content */
+.section2-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-left: 5rem;
+}
+
+.section2-text {
+    font-size: 1.125rem;
+    color: #666;
+    line-height: 1.8;
+    font-family: 'Arial', sans-serif;
+    font-weight: 300;
+    max-width: 600px;
+    letter-spacing: normal;
+}
+
+.section2-text p {
+    margin: 0;
+}
+
+.download-brochure-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 2.5rem;
+    border: 1px solid #8B1538;
+    background: transparent;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    width: fit-content;
+    margin-top: 0.5rem;
+}
+
+.download-brochure-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+.download-brochure-button:hover {
+    background: #8B1538;
+    color: white;
+}
+
+.download-brochure-button:hover .download-brochure-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Right Section - Image */
+.section2-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section2-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .section2-container {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .section2 {
+        padding: 3rem 1.5rem;
+    }
+
+    .section2-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .section2-left {
+        margin-left: 0;
+    }
+
+    .section2-text {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .section2-image {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section2 {
+        padding: 2rem 1rem;
+    }
+
+    .section2-left {
+        gap: 2rem;
+    }
+
+    .section2-text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        max-width: 100%;
+    }
+
+    .download-brochure-button {
+        padding: 0.65rem 2rem;
+        font-size: 0.85rem;
+    }
+
+    .section2-image {
+        max-width: 100%;
+    }
+}

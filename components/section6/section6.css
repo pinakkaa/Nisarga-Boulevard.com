@@ -1,0 +1,260 @@
+.section6 {
+    width: 100%;
+    background: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.section6-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Plans Label */
+.section6-plans-label {
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 1rem 0;
+}
+
+/* Red Banner */
+.section6-red-banner {
+    width: 100%;
+    background: #8B1538;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section6-banner-arrow {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    transition: opacity 0.3s ease;
+    padding: 0.5rem;
+}
+
+.section6-banner-arrow:hover {
+    opacity: 0.8;
+}
+
+.section6-banner-arrow svg {
+    width: 24px;
+    height: 24px;
+}
+
+.section6-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.section6-banner-title {
+    font-size: 1.8rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.section6-banner-subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Main Container - Table and Image */
+.section6-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+    background: white;
+}
+
+/* Left Side - List */
+.section6-left {
+    background: #f5f5f5;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section6-plan-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.section6-plan-header-main {
+    font-size: 1.5rem;
+    color: #8B1538;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.section6-plan-header-sub {
+    font-size: 1.2rem;
+    color: #b85c7a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.section6-plan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section6-plan-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.section6-plan-name {
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+.section6-plan-size {
+    font-size: 0.95rem;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Right Side - Image */
+.section6-right {
+    background: white;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.section6-plan-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .section6-wrapper {
+        max-width: 1000px;
+    }
+
+    .section6-container {
+        grid-template-columns: 300px 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .section6 {
+        padding: 1.5rem;
+    }
+
+    .section6-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .section6-red-banner {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .section6-banner-title {
+        font-size: 1.5rem;
+    }
+
+    .section6-banner-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .section6 {
+        padding: 1rem;
+    }
+
+    .section6-plans-label {
+        font-size: 0.9rem;
+    }
+
+    .section6-red-banner {
+        padding: 1rem;
+    }
+
+    .section6-banner-title {
+        font-size: 1.3rem;
+    }
+
+    .section6-banner-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section6-banner-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .section6-plan-header-main {
+        font-size: 1.3rem;
+    }
+
+    .section6-plan-header-sub {
+        font-size: 1.1rem;
+    }
+
+    .section6-plan-name {
+        font-size: 0.95rem;
+    }
+
+    .section6-plan-size {
+        font-size: 0.9rem;
+    }
+}

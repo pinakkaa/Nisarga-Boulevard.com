@@ -1,0 +1,183 @@
+.section8 {
+    width: 100%;
+    background: white;
+    padding: 4rem 2rem 4rem calc(2rem + 10%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.section8-container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin: 0 auto;
+}
+
+/* Left Side - Connectivity and Map */
+.section8-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.section8-connectivity-title {
+    font-size: 1.4rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 1.5rem 0;
+}
+
+.section8-map-container {
+    width: 100%;
+    height: 400px;
+    border: none;
+    overflow: hidden;
+    border-radius: 4px;
+    position: relative;
+    background: #f5f5f5;
+}
+
+.section8-map-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(50%) brightness(1.05);
+}
+
+.section8-view-larger-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.section8-view-larger-button:hover {
+    background: #f0f0f0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Right Side - Thrills In The Vicinity */
+.section8-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 0;
+    margin-top: calc(1.8rem + 1.5rem + 2rem);
+}
+
+.section8-vicinity-title {
+    font-size: 1.5rem;
+    color: #8B1538;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.section8-vicinity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section8-vicinity-item {
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .section8-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .section8-map-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 968px) {
+    .section8 {
+        padding: 3rem 1.5rem 3rem calc(1.5rem + 8%);
+    }
+
+    .section8-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section8-left {
+        gap: 1.5rem;
+    }
+
+    .section8-right {
+        justify-content: flex-start;
+        margin-top: calc(1.5rem + 1rem + 1.5rem);
+    }
+
+    .section8-map-container {
+        height: 350px;
+    }
+
+    .section8-connectivity-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .section8-vicinity-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .section8 {
+        padding: 2rem 1rem 2rem calc(1rem + 5%);
+    }
+
+    .section8-connectivity-title {
+        font-size: 1.1rem;
+    }
+
+    .section8-map-container {
+        height: 300px;
+    }
+
+    .section8-vicinity-title {
+        font-size: 1.2rem;
+    }
+
+    .section8-right {
+        margin-top: calc(1.3rem + 1rem + 1rem);
+    }
+
+    .section8-vicinity-item {
+        font-size: 0.95rem;
+    }
+}

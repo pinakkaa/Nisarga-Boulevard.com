@@ -1,0 +1,51 @@
+.middle-section {
+    width: 100%;
+    background: white;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-container {
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-image {
+    max-width: 50%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .middle-section {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .middle-container {
+        max-width: 600px;
+    }
+
+    .middle-image {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 640px) {
+    .middle-section {
+        padding: 1rem 0.5rem;
+    }
+
+    .middle-container {
+        max-width: 100%;
+    }
+
+    .middle-image {
+        max-width: 70%;
+    }
+}

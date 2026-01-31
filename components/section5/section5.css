@@ -1,0 +1,116 @@
+.section5 {
+    width: 100%;
+    background: white;
+    padding: 3rem 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.section5-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section5-heading {
+    font-size: 1.25rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 3rem 2rem;
+}
+
+.section5-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem 2rem;
+    width: 100%;
+}
+
+.section5-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section5-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
+
+.section5-icon-label {
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .section5-icons-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem 1.5rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .section5 {
+        padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .section5-heading {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        margin-left: 1.5rem;
+    }
+
+    .section5-icons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem 2rem;
+    }
+
+    .section5-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .section5-icon-label {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .section5 {
+        padding: 2rem 1rem;
+    }
+
+    .section5-heading {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+    }
+
+    .section5-icons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
+    }
+
+    .section5-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .section5-icon-label {
+        font-size: 0.9rem;
+    }
+}
