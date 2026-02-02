@@ -7,7 +7,7 @@
 /* Upper Section - White Background */
 .section11-upper {
     background: #7a3f05;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     display: flex;
     justify-content: center;
 }
@@ -27,6 +27,7 @@
     flex-direction: column;
     gap: 1.5rem;
     align-items: flex-start;
+    padding: 2rem 0rem;
 }
 
 .section11-logo-container {
@@ -36,8 +37,8 @@
 }
 
 .section11-logo {
-    height: 60px;
-    width: auto;
+    height: auto;
+    width: 140px;
 }
 
 .section11-50years-badge {
@@ -112,6 +113,8 @@
     flex-direction: column;
     gap: 2rem;
     align-items: flex-end;
+    height: 100%;
+    justify-content: center;
 }
 
 .section11-social-container {
@@ -300,4 +303,29 @@
         align-items: flex-start;
         gap: 0.75rem;
     }
+}
+
+.section11-footer-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: left;
+    text-align: left;
+    justify-content: center;
+    margin-left: 15rem;
+}
+.section11-footer-links-title{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 1rem;
+}
+.section11-footer-link {
+    color: white;
+    font-size: 0.7rem;
+    font-family: 'Arial', sans-serif;
+}
+.section11-footer-link:hover{
+    color: #ffffff8d;
 }

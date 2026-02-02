@@ -38,11 +38,11 @@
 
 /* Set background images */
 #heroImage1 {
-    background-image: url('./homepage.jpg');
+    background-image: url('../../public/images/banner1.png');
 }
 
 #heroImage2 {
-    background-image: url('./homepage2.jpg');
+    background-image: url('../../public/images/banner2.png');
 }
 
 /* Overlay */
