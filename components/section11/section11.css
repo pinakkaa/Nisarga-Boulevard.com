@@ -329,3 +329,17 @@
 .section11-footer-link:hover{
     color: #ffffff8d;
 }
+.section11-footer-links-flex{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 2.5rem;
+}
+.section11-footer-links-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: left;
+    text-align: left;
+    justify-content: top;
+}
