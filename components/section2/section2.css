@@ -86,6 +86,7 @@
     height: auto;
     object-fit: contain;
     display: block;
+    border-radius: 10px;
 }
 
 /* Responsive Design */
