@@ -1,73 +1,1742 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisarga Boulevard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/globals.css">
-    <link rel="stylesheet" href="components/navbar/navbar.css">
-    <link rel="stylesheet" href="components/hero/hero.css">
-    <link rel="stylesheet" href="components/middle/middle.css">
-    <link rel="stylesheet" href="components/section2/section2.css">
-    <link rel="stylesheet" href="components/section3/section3.css">
-    <link rel="stylesheet" href="components/section4/section4.css">
-    <link rel="stylesheet" href="components/section5/section5.css">
-    <link rel="stylesheet" href="components/section6/section6.css">
-    <link rel="stylesheet" href="components/section7/section7.css">
-    <link rel="stylesheet" href="components/section8/section8.css">
-    <link rel="stylesheet" href="components/section9/section9.css">
-    <link rel="stylesheet" href="components/section9/section9.css">
-    <link rel="stylesheet" href="components/section10/section10.css">
-    <link rel="stylesheet" href="components/section11/section11.css">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <style>
-        .footer-bottom {
-            text-align: center;
-            padding: 15px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            background-color: #7a3f05;
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nisarga Boulevard</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles/globals.css">
+        <link rel="stylesheet" href="components/navbar/navbar.css">
+        <link rel="stylesheet" href="components/hero/hero.css">
+        <link rel="stylesheet" href="components/middle/middle.css">
+        <link rel="stylesheet" href="components/section2/section2.css">
+        <link rel="stylesheet" href="components/section3/section3.css">
+        <link rel="stylesheet" href="components/section4/section4.css">
+        <link rel="stylesheet" href="components/section5/section5.css">
+        <link rel="stylesheet" href="components/section6/section6.css">
+        <link rel="stylesheet" href="components/section7/section7.css">
+        <link rel="stylesheet" href="components/section8/section8.css">
+        <link rel="stylesheet" href="components/section9/section9.css">
+        <link rel="stylesheet" href="components/section9/section9.css">
+        <link rel="stylesheet" href="components/section10/section10.css">
+        <link rel="stylesheet" href="components/section11/section11.css">
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <style>
+            .footer-bottom {
+                text-align: center;
+                padding: 15px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                background-color: #7a3f05;
+            }
+
+            .footer-bottom p {
+                color: #ddd;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .footer-bottom a {
+                color: #ffffff;
+                text-decoration: none;
+                font-weight: 600;
+                transition: 0.3s;
+            }
+
+            .footer-bottom a:hover {
+                color: #f5c16c;
+                /* match your theme */
+            }
+
+            @media(max-width: 1200px) {
+                .section11-footer-links-container {
+                    margin-left: 0;
+                }
+            }
+
+            @media(max-width: 640px) {
+                .section10-right {
+                    height: auto;
+                }
+            }
+        </style>
+        <style>:root
+        {
+            --brown: #7a4a10;
+            --brown-dk: #5e3808;
+            --brown-lt: #c49a52;
+            --cream: #faf7f3;
+            --cream-2: #f2ece3;
+            --text: #1e1409;
+            --text-muted: #6a5040;
+            --border: #ddd0c0;
         }
 
-        .footer-bottom p {
-            color: #ddd;
-            font-size: 14px;
-            line-height: 1.6;
+
+        /* ── OUTER SHELL ── */
+        .amenities-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 0;
         }
 
-        .footer-bottom a {
-            color: #ffffff;
-            text-decoration: none;
+        .amenities-section-wrapper {
+            max-width: 1140px;
+        }
+
+        /* ── HEADER ROW ── */
+        .header-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            /* margin-bottom: 48px;
+            gap: 20px; */
+        }
+
+        .header-left {}
+
+        .label-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.72rem;
             font-weight: 600;
-            transition: 0.3s;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--brown);
+            margin-bottom: 12px;
         }
 
-        .footer-bottom a:hover {
-            color: #f5c16c;
-            /* match your theme */
+        .label-tag::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--brown-lt);
+            border-radius: 2px;
         }
 
-        @media (max-width: 1200px) {
-            .section11-footer-links-container {
-                margin-left: 0;
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--brown);
+        }
+
+        /* slide counter */
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 16px;
+        }
+
+        .slide-counter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+
+        .slide-counter span {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--brown);
+        }
+
+        /* nav arrows */
+        .nav-arrows {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--brown);
+            transition: all 0.22s ease;
+            box-shadow: 0 2px 10px rgba(122, 74, 16, 0.08);
+        }
+
+        .nav-btn:hover {
+            background: var(--brown);
+            border-color: var(--brown);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(122, 74, 16, 0.25);
+            transform: scale(1.06);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ── SLIDER WRAPPER ── */
+        .slider-viewport {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+
+        .slides-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        /* ── SINGLE SLIDE ── */
+        .slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 560px;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        /* LEFT: image side */
+        .slide-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.04);
+            transition: transform 0.8s ease;
+        }
+
+        .slide.active .slide-image img {
+            transform: scale(1);
+        }
+
+        /* overlay gradient on image */
+        .slide-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(30, 20, 9, 0.35) 0%, transparent 60%), linear-gradient(to right, transparent 70%, rgba(242, 236, 227, 0.6) 100%);
+            pointer-events: none;
+        }
+
+        /* slide number badge on image */
+        .slide-badge {
+            position: absolute;
+            top: 28px;
+            left: 28px;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        /* RIGHT: content side */
+        .slide-content {
+            background: #fff;
+            padding: 52px 48px 48px 52px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* decorative vertical line */
+        .slide-content::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 40px;
+            bottom: 40px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--brown-lt), var(--brown), var(--brown-lt));
+            border-radius: 2px;
+        }
+
+        .slide-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .slide-content .sub {
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brown-lt);
+            margin-bottom: 32px;
+        }
+
+        /* amenity list */
+        .amenity-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .amenity-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 9px 12px 9px 0;
+            border-bottom: 1px solid var(--cream-2);
+            font-size: 0.87rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            line-height: 1.4;
+            transition: color 0.18s;
+            cursor: default;
+        }
+
+        .amenity-list li:hover {
+            color: var(--brown);
+        }
+
+        .amenity-list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--brown-lt);
+            margin-top: 5px;
+            transition: background 0.18s, transform 0.18s;
+        }
+
+        .amenity-list li:hover::before {
+            background: var(--brown);
+            transform: scale(1.4);
+        }
+
+        /* ── PROGRESS DOTS ── */
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 32px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .dot.active {
+            background: var(--brown);
+            width: 28px;
+            border-radius: 4px;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width: 860px) {
+            .slide {
+                grid-template-columns: 1fr;
+            }
+
+            .slide-image {
+                min-height: 260px;
+            }
+
+            .slide-content {
+                padding: 36px 28px 36px 36px;
+            }
+
+            .amenity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .header-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-right {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        /* Tablet: ≤860px */
+        @media(max-width: 860px) {
+            .amenities-section {
+                padding: 3.5rem 1rem;
+            }
+
+            .header-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+                margin-bottom: 28px;
+            }
+
+            .header-right {
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .slide {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .slide-image {
+                min-height: 240px;
+                max-height: 300px;
+            }
+
+            .slide-content {
+                padding: 36px 28px 36px 36px;
+            }
+
+            .amenity-list {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
-        @media (max-width: 640px) {
-            .section10-right {
-                height: auto;
+        /* Mobile: ≤560px */
+        @media(max-width: 560px) {
+            .amenities-section {
+                padding: 2.5rem 0.75rem;
+            }
+
+            .header-row {
+                gap: 20px;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: clamp(1.8rem, 8vw, 2.4rem);
+            }
+
+            .header-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .slide-counter {
+                font-size: 0.9rem;
+            }
+
+            .slide-counter span {
+                font-size: 1.2rem;
+            }
+
+            .nav-btn {
+                width: 42px;
+                height: 42px;
+            }
+
+            .slider-viewport {
+                border-radius: 16px;
+            }
+
+            .slide {
+                border-radius: 16px;
+            }
+
+            .slide-image {
+                min-height: 200px;
+                max-height: 240px;
+            }
+
+            .slide-badge {
+                top: 16px;
+                left: 16px;
+                font-size: 0.65rem;
+                padding: 5px 12px;
+            }
+
+            .slide-content {
+                padding: 2rem 0.5rem;
+            }
+
+            .slide-content::before {
+                top: 24px;
+                bottom: 24px;
+            }
+
+            .slide-content h3 {
+                font-size: 1.4rem;
+                margin-bottom: 6px;
+            }
+
+            .slide-content .sub {
+                font-size: 0.68rem;
+                margin-bottom: 20px;
+            }
+
+            .amenity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .amenity-list li {
+                font-size: 0.85rem;
+                padding: 8px 0;
+            }
+
+            .progress-dots {
+                margin-top: 20px;
             }
         }
+
+        /* Very small: ≤380px */
+        @media(max-width: 380px) {
+            .amenities-section {
+                padding: 2rem 0.5rem;
+            }
+
+            .slide-content {
+                padding: 22px 16px 22px 22px;
+            }
+
+            .slide-image {
+                min-height: 180px;
+            }
+        }
+    </style>
+    <style>
+        /* *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #edeae4;
+            font-family: 'Jost', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        } */
+
+        /* ── WRAPPER ── */
+        .main-about-us-section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 0;
+        }
+
+        .wrapper {
+            display: flex;
+            max-width: 1160px;
+            width: 100%;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(80, 50, 20, 0.18), 0 4px 16px rgba(80, 50, 20, 0.08);
+            background: #f5f2ee;
+            min-height: 580px;
+        }
+
+        /* ── LEFT IMAGE PANEL ── */
+        .image-panel {
+            position: relative;
+            flex: 0 0 46%;
+            min-height: 520px;
+            overflow: hidden;
+        }
+
+        .image-panel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 8s ease;
+        }
+
+        .wrapper:hover .image-panel img {
+            transform: scale(1.04);
+        }
+
+        .image-panel::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 10, 30, 0.45) 0%, rgba(10, 10, 30, 0.10) 45%, rgba(80, 40, 10, 0.55) 100%);
+        }
+
+        .image-text {
+            position: absolute;
+            top: 34px;
+            left: 34px;
+            z-index: 2;
+        }
+
+        .image-text .city {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.06em;
+            line-height: 1;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-text .sub {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.35em;
+            color: #f0c96a;
+            margin-top: 6px;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-badge {
+            position: absolute;
+            bottom: 30px;
+            left: 34px;
+            right: 34px;
+            z-index: 2;
+            display: flex;
+            gap: 10px;
+        }
+
+        .badge-pill {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50px;
+            padding: 6px 16px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        /* ── RIGHT CONTENT PANEL ── */
+        .content-panel {
+            flex: 1;
+            padding: 52px 52px 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #f5f2ee;
+            position: relative;
+        }
+
+        .content-panel::before {
+            content: '';
+            position: absolute;
+            top: 52px;
+            left: 52px;
+            width: 48px;
+            height: 3px;
+            background: #7a4a10;
+            border-radius: 2px;
+        }
+
+        .headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+            font-weight: 700;
+            color: #1e1409;
+            line-height: 1.15;
+            margin-top: 28px;
+            margin-bottom: 32px;
+        }
+
+        .block {
+            margin-bottom: 28px;
+            padding-left: 18px;
+            border-left: 2px solid #c49a52;
+        }
+
+        .block h3 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #7a4a10;
+            margin-bottom: 10px;
+        }
+
+        .block p {
+            font-size: 0.93rem;
+            font-weight: 300;
+            color: #4a3520;
+            line-height: 1.75;
+        }
+
+        .cta-row {
+            margin-top: 38px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #7a4a10;
+            color: #fff;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 15px 32px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+            box-shadow: 0 6px 22px rgba(122, 74, 16, 0.30);
+        }
+
+        .btn-primary:hover {
+            background: #5e3808;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(122, 74, 16, 0.38);
+        }
+
+        .btn-primary svg {
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(3px);
+        }
+
+        .note {
+            font-size: 0.78rem;
+            color: #9a7a5a;
+            font-weight: 400;
+        }
+
+        @media(max-width: 760px) {
+            .wrapper {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+
+            .image-panel {
+                flex: none;
+                min-height: 300px;
+                width: 100%;
+            }
+
+            .content-panel {
+                padding: 40px 28px 36px;
+            }
+
+            .content-panel::before {
+                top: 40px;
+                left: 28px;
+            }
+        }
+
+        /* ════════════════════════════════════
+           MODAL
+        ════════════════════════════════════ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 12, 4, 0.65);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal {
+            background: #f5f2ee;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 40px 100px rgba(20, 10, 4, 0.35);
+            overflow: hidden;
+            transform: translateY(30px) scale(0.97);
+            transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            max-height: 92vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.open .modal {
+            transform: translateY(0) scale(1);
+        }
+
+        /* header */
+        .modal-header {
+            background: #7a4a10;
+            padding: 28px 32px 24px;
+            position: relative;
+        }
+
+        .modal-header .mh-line {
+            width: 36px;
+            height: 2px;
+            background: #f0c96a;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .modal-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .modal-header p {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.72);
+            margin-top: 6px;
+            font-weight: 300;
+            letter-spacing: 0.03em;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 22px;
+            background: rgba(255, 255, 255, 0.14);
+            border: none;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.26);
+        }
+
+        /* body */
+        .modal-body {
+            padding: 30px 32px 34px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field-group label {
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #7a4a10;
+        }
+
+        .field-group input,
+        .field-group textarea,
+        .field-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid #ddd0c0;
+            border-radius: 10px;
+            background: #fff;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.92rem;
+            color: #2a1a0a;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+
+        .field-group input:focus,
+        .field-group textarea:focus,
+        .field-group select:focus {
+            border-color: #7a4a10;
+            box-shadow: 0 0 0 3px rgba(122, 74, 16, 0.12);
+        }
+
+        .field-group input.error,
+        .field-group textarea.error,
+        .phone-row input.error {
+            border-color: #c0392b;
+            box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.10);
+        }
+
+        .error-msg {
+            font-size: 0.72rem;
+            color: #c0392b;
+            display: none;
+            margin-top: 1px;
+        }
+
+        .error-msg.show {
+            display: block;
+        }
+
+        /* phone row */
+        .phone-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .phone-row select {
+            flex: 0 0 118px;
+        }
+
+        .phone-row input {
+            flex: 1;
+        }
+
+        .field-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* submit */
+        .btn-submit {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #7a4a10;
+            color: #fff;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 15px 28px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 4px;
+            transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+            box-shadow: 0 6px 22px rgba(122, 74, 16, 0.28);
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            background: #5e3808;
+            transform: translateY(-1px);
+            box-shadow: 0 10px 28px rgba(122, 74, 16, 0.36);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid rgba(255, 255, 255, 0.35);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* success */
+        .success-view {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 44px 32px 48px;
+            gap: 16px;
+        }
+
+        .success-icon {
+            width: 72px;
+            height: 72px;
+            background: #f0e8d8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4px;
+        }
+
+        .success-icon svg {
+            color: #7a4a10;
+        }
+
+        .success-view h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #1e1409;
+        }
+
+        .success-view p {
+            font-size: 0.9rem;
+            color: #6a5040;
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .success-view .dl-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0e8d8;
+            border: 1px solid #ddd0c0;
+            padding: 9px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: #5e3808;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+
+        .btn-close-success {
+            margin-top: 6px;
+            background: none;
+            border: 1.5px solid #c49a52;
+            color: #7a4a10;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.84rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 11px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-close-success:hover {
+            background: #7a4a10;
+            color: #fff;
+        }
+
+    </style>
+    <style>
+        /* *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #faf8f5;
+            font-family: 'Jost', sans-serif;
+            color: #3a2a1a;
+            min-height: 100vh;
+            padding: 60px 20px;
+        } */
+
+        /* .location-advantages{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+        .section-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: #3a2a1a;
+            margin-bottom: 50px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── TOP 3 HOVER CARDS ── */
+        .top-cards {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+            flex-wrap: wrap;
+        }
+
+        .top-card {
+            position: relative;
+            width: 310px;
+            height: 300px;
+            border-radius: 20px;
+            border: 1.5px solid #ddd0c0;
+            background: #fff;
+            overflow: hidden;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* static face */
+        .card-front {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .card-front .icon {
+            font-size: 3rem;
+            color: #7a4a10;
+        }
+
+        .card-front h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #3a2a1a;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* brown overlay coming from bottom */
+        .card-back {
+            position: absolute;
+            inset: 0;
+            background: #7a4a10;
+            border-radius: 20px;
+            transform: translateY(100%);
+            transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 28px 26px;
+            gap: 14px;
+        }
+
+        .card-back h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .card-back ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .card-back ul li {
+            font-size: 0.88rem;
+            font-weight: 400;
+            color: #f5e9d8;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.45;
+        }
+
+        .card-back ul li::before {
+            content: '•';
+            color: #f5c882;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: -1px;
+        }
+
+        /* hover triggers */
+        .top-card:hover .card-back {
+            transform: translateY(0);
+        }
+        .top-card:hover .card-front {
+            opacity: 0;
+            transform: translateY(-16px);
+        }
+
+        /* ── BOTTOM INFO GRID ── */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1100px;
+            margin: 0 auto;
+            border-top: 1px solid #ddd0c0;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 32px 20px;
+            gap: 14px;
+            border-right: 1px solid #ddd0c0;
+            border-bottom: 1px solid #ddd0c0;
+            transition: background 0.25s;
+        }
+
+        .info-item:hover {
+            background: #f5ede0;
+        }
+        .info-item:nth-child(4n) {
+            border-right: none;
+        }
+
+        .info-item .icon {
+            font-size: 2.2rem;
+            color: #7a4a10;
+        }
+
+        .info-item p {
+            font-size: 0.87rem;
+            font-weight: 400;
+            color: #5a3e28;
+            line-height: 1.5;
+            max-width: 160px;
+        }
+
+        @media(max-width: 900px) {
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .info-item:nth-child(2n) {
+                border-right: none;
+            }
+            .info-item:nth-child(4n) {
+                border-right: 1px solid #ddd0c0;
+            }
+            .info-item:nth-child(2n) {
+                border-right: none;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .top-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .top-card {
+                width: 100%;
+                max-width: 340px;
+            }
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        .footer-sub-links {
+            color: #fff;
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+        }
+
+    </style>
+    <style>
+        /* ── All classes prefixed with gsl- to avoid conflicts ── */
+
+        /* .gsl-wrap *,
+        .gsl-wrap *::before,
+        .gsl-wrap *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        } */
+
+        .gsl-wrap {
+            /* --gsl-bg: #f5f3ef; */
+            --gsl-surface: #ffffff;
+            --gsl-border: #e2ddd6;
+            --gsl-border-mid: #cfc9be;
+            --gsl-gold: #b07d4f;
+            --gsl-text: #1a1a1a;
+            --gsl-muted: #9a9590;
+
+            font-family: 'DM Sans', sans-serif;
+            /* background: var(--gsl-bg); */
+            /* min-height: 100vh; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 24px 70px;
+            overflow-x: hidden;
+        }
+
+        /* ── Header ── */
+        .gsl-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .gsl-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 10px;
+            font-weight: 300;
+            letter-spacing: 0.42em;
+            text-transform: uppercase;
+            color: var(--gsl-gold);
+            margin-bottom: 16px;
+        }
+        .gsl-eyebrow::before,
+        .gsl-eyebrow::after {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--gsl-gold);
+            opacity: 0.6;
+        }
+
+        .gsl-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--gsl-text);
+        }
+        .gsl-heading em {
+            font-style: italic;
+            color: var(--gsl-gold);
+        }
+
+        /* ── Slider Section ── */
+        .gsl-section {
+            position: relative;
+            width: 100%;
+            max-width: 1160px;
+        }
+
+        .gsl-section::before,
+        .gsl-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            z-index: 5;
+            pointer-events: none;
+        }
+        .gsl-section::before {
+            left: 0;
+            background: linear-gradient(to right, var(--gsl-bg), transparent);
+        }
+        .gsl-section::after {
+            right: 0;
+            background: linear-gradient(to left, var(--gsl-bg), transparent);
+        }
+
+        .gsl-viewport {
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .gsl-track {
+            display: flex;
+            gap: 18px;
+            will-change: transform;
+        }
+
+        /* ── Slide ── */
+        .gsl-slide {
+            width: 300px;
+            height: 200px;
+            flex-shrink: 0;
+            position: relative;
+            cursor: pointer;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid var(--gsl-border);
+        }
+
+        .gsl-slide img {
+            width: 100%;
+            height: 100%;
+            /* aspect-ratio: 3/4; */
+            object-fit: cover;
+            display: block;
+        }
+
+        .gsl-expand-btn {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+            cursor: pointer;
+        }
+        .gsl-expand-btn svg {
+            width: 13px;
+            height: 13px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 1.8;
+        }
+        .gsl-slide:hover .gsl-expand-btn {
+            opacity: 1;
+        }
+        .gsl-expand-btn:hover {
+            background: rgba(176, 125, 79, 0.75);
+            border-color: transparent;
+        }
+
+        /* ── Arrows ── */
+        .gsl-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gsl-border-mid);
+            background: var(--gsl-surface);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: border-color 0.22s, background 0.22s, color 0.22s;
+            color: var(--gsl-text);
+        }
+        .gsl-arrow:hover {
+            border-color: var(--gsl-gold);
+            background: var(--gsl-gold);
+            color: #fff;
+        }
+        .gsl-arrow svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+        }
+        .gsl-arrow-prev {
+            left: -23px;
+        }
+        .gsl-arrow-next {
+            right: -23px;
+        }
+
+        /* ── Footer ── */
+        .gsl-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .gsl-dots {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .gsl-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ccc;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.28s, width 0.28s, border-radius 0.28s;
+        }
+        .gsl-dot.gsl-dot-active {
+            background: var(--gsl-gold);
+            width: 20px;
+            border-radius: 3px;
+        }
+
+        .gsl-counter {
+            font-size: 11px;
+            letter-spacing: 0.22em;
+            color: var(--gsl-muted);
+            font-weight: 300;
+        }
+        .gsl-counter strong {
+            color: var(--gsl-gold);
+            font-weight: 400;
+        }
+
+        /* ── Lightbox ── */
+        .gsl-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.32s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gsl-lightbox.gsl-lb-open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .gsl-lb-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(245, 243, 239, 0.92);
+            backdrop-filter: blur(20px);
+            cursor: pointer;
+        }
+
+        .gsl-lb-inner {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 20px;
+            max-width: 960px;
+            width: 100%;
+        }
+
+        .gsl-lb-img-wrap {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--gsl-border);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.13);
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
+            transform: scale(0.93);
+            transition: transform 0.42s cubic-bezier(0.34,1.4,0.64,1);
+        }
+        .gsl-lightbox.gsl-lb-open .gsl-lb-img-wrap {
+            transform: scale(1);
+        }
+
+        .gsl-lb-img-wrap img {
+            width: 100%;
+            max-height: 80vh;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.16s, transform 0.16s;
+        }
+
+        .gsl-lb-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            z-index: 3;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gsl-border-mid);
+            background: var(--gsl-surface);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            transition: background 0.2s, border-color 0.2s, transform 0.28s;
+        }
+        .gsl-lb-close:hover {
+            background: #e04444;
+            border-color: #e04444;
+            transform: rotate(90deg);
+        }
+        .gsl-lb-close svg {
+            width: 13px;
+            height: 13px;
+            fill: none;
+            stroke: var(--gsl-muted);
+            stroke-width: 2;
+            transition: stroke 0.2s;
+        }
+        .gsl-lb-close:hover svg {
+            stroke: #fff;
+        }
+
+        .gsl-lb-arrow {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gsl-border-mid);
+            background: var(--gsl-surface);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            color: var(--gsl-text);
+        }
+        .gsl-lb-arrow:hover {
+            background: var(--gsl-gold);
+            border-color: var(--gsl-gold);
+            color: #fff;
+        }
+        .gsl-lb-arrow svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+        }
+
+        .gsl-lb-page {
+            position: absolute;
+            bottom: 14px;
+            right: 18px;
+            z-index: 3;
+            font-size: 10.5px;
+            letter-spacing: 0.22em;
+            color: var(--gsl-muted);
+            font-family: 'DM Sans', sans-serif;
+        }
+        .gsl-lb-page strong {
+            color: var(--gsl-gold);
+            font-weight: 400;
+        }
+
+        .gsl-lb-thumbs {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 3;
+        }
+
+        .gsl-lb-thumb {
+            width: 40px;
+            height: 27px;
+            border-radius: 3px;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.35;
+            border: 1.5px solid transparent;
+            transition: opacity 0.2s, border-color 0.2s;
+        }
+        .gsl-lb-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gsl-lb-thumb.gsl-lb-thumb-active {
+            opacity: 1;
+            border-color: var(--gsl-gold);
+        }
+        .gsl-lb-thumb:hover:not(.gsl-lb-thumb-active) {
+            opacity: 0.65;
+        }
+
+        /* ── Responsive ── */
+        @media(max-width: 900px) {
+            .gsl-slide {
+                min-width: 250px;
+            }
+        }
+        @media(max-width: 640px) {
+            .gsl-slide {
+                min-width: 210px;
+            }
+            .gsl-arrow-prev {
+                left: -10px;
+            }
+            .gsl-arrow-next {
+                right: -10px;
+            }
+            .gsl-lb-inner {
+                gap: 8px;
+                padding: 10px;
+            }
+            .gsl-lb-arrow {
+                width: 36px;
+                height: 36px;
+            }
+            .gsl-lb-thumbs {
+                display: none;
+            }
+            .gsl-section::before,
+            .gsl-section::after {
+                width: 36px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
     <!-- Navbar Section -->
     <nav class="navbar" id="navbar">
-        <div class="navbar-container">
+        <div
+            class="navbar-container">
             <!-- Logo -->
             <a href="#Home" class="logo">
                 <img src="./public/images/logo-white.png" alt="Nisarga Boulevard Logo" class="logo-image">
@@ -85,7 +1754,7 @@
             </div>
 
             <!-- Enquire Button -->
-            <a href="#Enquiry" class="enquire-button">ENQUIRE</a>
+            <div class="enquire-button" id="openModalBtn">ENQUIRE</div>
 
             <!-- Mobile Menu Icon -->
             <button class="menu-icon" id="menuToggle" aria-label="Toggle menu">
@@ -109,7 +1778,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="Home">
+    <section
+        class="hero" id="Home">
         <!-- Background Images with Fade Animation -->
         <div class="hero-background">
             <div class="hero-image active" id="heroImage1"></div>
@@ -124,18 +1794,17 @@
                 <img src="components/downloadlogo.png" alt="Download" class="download-icon-image">
             </div>
             <!-- <div class="hero-left">
-                <h2 class="hero-subtitle">SEEK THE ADVENTURE IN YOU</h2>
-                <p class="hero-description">Plots packed with thrills overlooking Nandi Hills</p>
-            </div> -->
+                                                                                                                                                                                    <h2 class="hero-subtitle">SEEK THE ADVENTURE IN YOU</h2>
+                                                                                                                                                                                    <p class="hero-description">Plots packed with thrills overlooking Nandi Hills</p>
+                                                                                                                                                                                </div> -->
         </div>
 
         <!-- Property Info Bar -->
         <div class="property-info-bar">
             <div class="scroll-indicator">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none" />
-                    <path d="M12 8v8M8 12l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/>
+                    <path d="M12 8v8M8 12l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span>SCROLL DOWN</span>
             </div>
@@ -150,7 +1819,7 @@
                 </div>
                 <div class="property-item">
                     <span class="property-label">PRICE</span>
-                    <span class="property-value">1.4 Cr* Onwards</span>
+                    <span class="property-value">1.40 Cr* Onwards</span>
                 </div>
                 <div class="property-item">
                     <span class="property-label">LOCATION</span>
@@ -169,17 +1838,17 @@
 
     <!-- Section 2 -->
     <section class="section2" id="About">
-        <div class="section2-container">
+        <div
+            class="section2-container">
             <!-- Left Side - Text Content -->
             <div class="section2-left">
                 <div class="section2-text">
                     <p>Nisarga Boulevard is a premium villa plot development by PGR Buildtech Pvt. Ltd., set against the
-                        breathtaking backdrop of Nandi Hills in Devanahalli, North Bangalore. Thoughtfully planned and
-                        surrounded by nature, this exclusive community offers a perfect balance of scenic beauty, modern
-                        amenities, and peaceful living.</p>
+                                                                                                                        breathtaking backdrop of Nandi Hills in Devanahalli, North Bangalore. Thoughtfully planned and
+                                                                                                                        surrounded by nature, this exclusive community offers a perfect balance of scenic beauty, modern
+                                                                                                                        amenities, and peaceful living.</p>
                 </div>
-                <a href="./Nisarga-Boulevard-Brochure.pdf" class="download-brochure-button"
-                    download="Nisarga-Brochure.pdf">
+                <a href="./Nisarga-Boulevard-Brochure.pdf" class="download-brochure-button" download="Nisarga-Brochure.pdf">
 
                     <img src="components/section3/m21.png" alt="Download Brochure" class="download-brochure-icon">
                     DOWNLOAD BROCHURE
@@ -194,202 +1863,534 @@
         </div>
     </section>
 
-    <!-- Section 3 - RERA Numbers -->
-    <section class="section3">
-        <div class="section3-container">
-            <h2 class="section3-heading">RERA NUMBER</h2>
-            <div class="section3-divider"></div>
-            <div class="section3-rera-list">
-                <p class="rera-number">PRM/KA/RERA/1234/567/PR/891011/1213145</p>
+    <!-- ── MAIN SECTION ── -->
+    <section class="main-about-us-section">
+        <div class="wrapper">
+
+            <div class="image-panel">
+                <img src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&q=80" alt="Devanahalli Bangalore aerial view" onerror="this.style.background='linear-gradient(135deg,#4a2800,#c49a52)';this.removeAttribute('src')"/>
+                <div class="image-text">
+                    <div class="city">DEVANAHALLI</div>
+                    <div class="sub">BANGALORE</div>
+                </div>
+                <div class="image-badge">
+                    <span class="badge-pill">STRR Corridor</span>
+                    <span class="badge-pill">Growth Zone</span>
+                </div>
             </div>
-            <div class="section3-divider-bottom"></div>
+
+            <div class="content-panel">
+
+                <h2 class="headline">Own The Future<br>Land Value. Today.</h2>
+
+                <div class="block">
+                    <h3>Cities Expand. Land Appreciates</h3>
+                    <p>Nisarga Boulevard stands at the threshold of Greater Bengaluru's next expansion corridor, where
+                                                                                                                        infrastructure, connectivity, and long-term urban planning are shaping the city's future
+                                                                                                                        geography. Owning land here is taking a strategic position in Bengaluru's next phase.</p>
+                </div>
+
+                <div class="block">
+                    <h3>Why Nisarga is at the Centre of Greater Bengaluru?</h3>
+                    <p>Located near Thellahalli Gate along the STRR corridor, Nisarga Boulevard is situated in one of
+                                                                                                                        the city's most promising growth zones. The surrounding region is rapidly transforming.</p>
+                </div>
+
+                <div class="cta-row">
+                    <button class="btn-primary" id="openModalBtn">
+                        Download Brochure
+                        <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </button>
+                    <!-- <span class="note">Free · No commitment required</span> -->
+                </div>
+
+            </div>
         </div>
     </section>
+
+    <!-- ── MODAL ── -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+            <div class="modal-header">
+                <div class="mh-line"></div>
+                <h2 id="modalTitle">Get Your Free Brochure</h2>
+                <p>Fill in your details — download starts instantly.</p>
+                <button class="modal-close" id="closeModalBtn" aria-label="Close">
+                    <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Form -->
+            <div
+                class="modal-body" id="formView">
+
+                <!-- Name -->
+                <div class="field-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="" autocomplete="name"/>
+                    <span class="error-msg" id="nameErr">Please enter your full name.</span>
+                </div>
+
+                <!-- Phone -->
+                <div class="field-group">
+                    <label>Mobile Number</label>
+                    <div class="phone-row">
+                        <select id="countryCode" aria-label="Country code">
+                            <option value="+91">🇮🇳 +91</option>
+                            <option value="+1">🇺🇸 +1</option>
+                            <option value="+44">🇬🇧 +44</option>
+                            <option value="+971">🇦🇪 +971</option>
+                            <option value="+65">🇸🇬 +65</option>
+                            <option value="+61">🇦🇺 +61</option>
+                            <option value="+49">🇩🇪 +49</option>
+                            <option value="+33">🇫🇷 +33</option>
+                            <option value="+81">🇯🇵 +81</option>
+                            <option value="+86">🇨🇳 +86</option>
+                            <option value="+60">🇲🇾 +60</option>
+                            <option value="+966">🇸🇦 +966</option>
+                            <option value="+1-CA">🇨🇦 +1</option>
+                            <option value="+55">🇧🇷 +55</option>
+                            <option value="+27">🇿🇦 +27</option>
+                        </select>
+                        <input type="tel" id="phone" placeholder="" autocomplete="tel"/>
+                    </div>
+                    <span class="error-msg" id="phoneErr">Enter a valid number (digits only, 6–15 digits).</span>
+                </div>
+
+                <!-- Email -->
+                <div class="field-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="" autocomplete="email"/>
+                    <span class="error-msg" id="emailErr">Please enter a valid email address.</span>
+                </div>
+
+                <!-- Message -->
+                <div class="field-group">
+                    <label for="message">
+                        Message
+                        <span style="font-weight:300;text-transform:none;letter-spacing:0;color:#9a7a5a;font-size:0.72rem">
+                            — optional</span>
+                    </label>
+                    <textarea id="message" placeholder=""></textarea>
+                </div>
+
+                <button class="btn-submit" id="submitBtn">
+                    <span id="btnLabel">Download Brochure</span>
+                    <div class="spinner" id="spinner"></div>
+                    <svg id="btnIcon" width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                </button>
+
+            </div>
+
+            <!-- Success -->
+            <div class="success-view" id="successView">
+                <div class="success-icon">
+                    <svg width="34" height="34" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h3>Thank You!</h3>
+                <p>Your brochure download has started. Our team may reach out with more details about Nisarga Boulevard.
+                </p>
+                <div class="dl-badge">
+                    <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                    nisarga-boulevard.pdf
+                </div>
+                <button class="btn-close-success" id="closeSuccessBtn">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Section 3 - RERA Numbers -->
+    <!-- <section class="section3">
+                                                                    <div class="section3-container">
+                                                                        <h2 class="section3-heading">RERA NUMBER</h2>
+                                                                        <div class="section3-divider"></div>
+                                                                        <div class="section3-rera-list">
+                                                                            <p class="rera-number">PRM/KA/RERA/1234/567/PR/891011/1213145</p>
+                                                                        </div>
+                                                                        <div class="section3-divider-bottom"></div>
+                                                                    </div>
+                                                                </section> -->
 
     <!-- Section 4 - Amenities -->
-    <section class="section4" id="Amenities">
-        <div class="section4-header">
-            <h2 class="section4-header-title">AMENITIES</h2>
-            <div class="section4-nav-arrows">
-                <button class="nav-arrow" id="amenitiesPrev" aria-label="Previous">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button class="nav-arrow" id="amenitiesNext" aria-label="Next">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </button>
+    <!-- <section class="section4" id="Amenities"> <div class="section4-header">
+                                                            <h2 class="section4-header-title">AMENITIES</h2>
+                                                            <div class="section4-nav-arrows">
+                                                                <button class="nav-arrow" id="amenitiesPrev" aria-label="Previous">
+                                                                    <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>
+                                                                </button>
+                                                                <button class="nav-arrow" id="amenitiesNext" aria-label="Next">
+                                                                    <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="section4-container">
+                                                            <div
+                                                                class="section4-content active" data-section="0">
+                                                                <div class="section4-left">
+                                                                    <img src="./public/images/amenities-1.png" alt="The Leisure" class="section4-image">
+                                                                </div>
+                                            
+                                                                <div
+                                                                    class="section4-right">
+                                                                    <ul class="section4-list">
+                                                                        <li class="section4-list-item">Grand Clubhouse</li>
+                                                                        <li class="section4-list-item">Landscaped Entry Plaza</li>
+                                                                        <li class="section4-list-item">Kids’ Play Area</li>
+                                                                        <li class="section4-list-item">Toddlers’ Play Zone</li>
+                                                                        <li class="section4-list-item">Rope Bridge Play Area</li>
+                                                                        <li class="section4-list-item">Swing Park</li>
+                                                                        <li class="section4-list-item">Open Lawn Area</li>
+                                                                        <li class="section4-list-item">Aromatherapy Garden</li>
+                                                                        <li class="section4-list-item">Herbal Garden</li>
+                                                                        <li class="section4-list-item">Sculpture Garden (Peace Zone)</li>
+                                                                        <li class="section4-list-item">Garden with Sit-Outs</li>
+                                                                        <li class="section4-list-item">Senior Citizens’ Relaxation Zone</li>
+                                                                        <li class="section4-list-item">Outdoor Yoga Deck</li>
+                                                                        <li class="section4-list-item">Yoga Cabana</li>
+                                                                        <li class="section4-list-item">Meditation Pavilion</li>
+                                                                        <li class="section4-list-item">Fully Equipped Indoor Gym</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                            
+                                                            <div
+                                                                class="section4-content" data-section="1">
+                                                                <div class="section4-left">
+                                                                    <img src="./public/images/amenities-2.png" alt="The Adventure" class="section4-image">
+                                                                </div>
+                                            
+                                                                <div
+                                                                    class="section4-right">
+                                                                    <ul class="section4-list">
+                                                                        <li class="section4-list-item">Outdoor Fitness Gym</li>
+                                                                        <li class="section4-list-item">Zumba & Dance Floor</li>
+                                                                        <li class="section4-list-item">Aerobics Studio</li>
+                                                                        <li class="section4-list-item">Indoor Games Room (Chess & Carrom)</li>
+                                                                        <li class="section4-list-item">Table Tennis Zone</li>
+                                                                        <li class="section4-list-item">Billiards Room</li>
+                                                                        <li class="section4-list-item">Multipurpose Hall</li>
+                                                                        <li class="section4-list-item">Cafeteria</li>
+                                                                        <li class="section4-list-item">Library & Reading Lounge</li>
+                                                                        <li class="section4-list-item">Guest Rooms</li>
+                                                                        <li class="section4-list-item">Clinic / First-Aid Center</li>
+                                                                        <li class="section4-list-item">Cycling Track</li>
+                                                                        <li class="section4-list-item">Jogging Track</li>
+                                                                        <li class="section4-list-item">Futsal Court</li>
+                                                                        <li class="section4-list-item">Basketball Court</li>
+                                                                        <li class="section4-list-item">Pet Park / Pet Zone</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="section4-content" data-section="1">
+                                                                <div class="section4-left">
+                                                                    <img src="./public/images/amenities-3.png" alt="The Adventure" class="section4-image">
+                                                                </div>
+                                            
+                                                                <div
+                                                                    class="section4-right">
+                                                                    <ul class="section4-list">
+                                                                        <li class="section4-list-item">Children’s Activity Lawn</li>
+                                                                        <li class="section4-list-item">Event Lawn</li>
+                                                                        <li class="section4-list-item">Amphitheatre Seating</li>
+                                                                        <li class="section4-list-item">Water Feature / Reflective Pool</li>
+                                                                        <li class="section4-list-item">Rainwater Harvesting System</li>
+                                                                        <li class="section4-list-item">Underground Recharge Pits</li>
+                                                                        <li class="section4-list-item">Underground Electrification</li>
+                                                                        <li class="section4-list-item">Wide CC Roads</li>
+                                                                        <li class="section4-list-item">Street Lighting</li>
+                                                                        <li class="section4-list-item">24/7 CCTV Surveillance</li>
+                                                                        <li class="section4-list-item">Secured Gated Entry</li>
+                                                                        <li class="section4-list-item">Dedicated Visitor Parking</li>
+                                                                        <li class="section4-list-item">Landscaped Walkways</li>
+                                                                        <li class="section4-list-item">Seating Pergolas</li>
+                                                                        <li class="section4-list-item">Senior Walking Track</li>
+                                                                        <li class="section4-list-item">Eco-Friendly Green Spaces</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section> -->
+
+
+        <section class="location-advantages"> <h2 class="section-title">Location Benefits</h2>
+
+        <!-- TOP 3 CARDS -->
+        <div
+            class="top-cards">
+
+            <!-- Card 1: Life Style Amenities -->
+            <div class="top-card">
+                <div class="card-front">
+                    <div class="icon">🛍️</div>
+                    <h3>Life Style Amenities</h3>
+                </div>
+                <div class="card-back">
+                    <h3>Life Style Amenities</h3>
+                    <ul>
+                        <li>Brigade Orchards Mall – 6 mins</li>
+                        <li>Sattva Park Cubix Mall – 7 mins</li>
+                        <li>D-Mart – 12 mins</li>
+                        <li>Reliance Trends – 10 mins</li>
+                        <li>Prestige Forum Mall – 20 mins Upcoming</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- Card 2: Healthcare Centres -->
+            <div class="top-card">
+                <div class="card-front">
+                    <div class="icon">🏥</div>
+                    <h3>Healthcare Centres</h3>
+                </div>
+                <div class="card-back">
+                    <h3>Healthcare Centres</h3>
+                    <ul>
+                        <li>Columbia Asia Hospital – 8 mins</li>
+                        <li>Aster CMI Hospital – 15 mins</li>
+                        <li>Manipal Hospital – 20 mins</li>
+                        <li>Fortis Hospital – 18 mins</li>
+                        <li>Narayana Health City – 25 mins</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Educational Hubs -->
+            <div class="top-card">
+                <div class="card-front">
+                    <div class="icon">🎓</div>
+                    <h3>Educational Hubs</h3>
+                </div>
+                <div class="card-back">
+                    <h3>Educational Hubs</h3>
+                    <ul>
+                        <li>Delhi Public School – 5 mins</li>
+                        <li>Ryan International School – 8 mins</li>
+                        <li>Presidency School – 10 mins</li>
+                        <li>Stonehill International – 12 mins</li>
+                        <li>Jain University Campus – 15 mins</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-        <div class="section4-container">
-            <!-- Section 1: The Leisure -->
-            <div class="section4-content active" data-section="0">
-                <!-- Left Side - Image -->
-                <div class="section4-left">
-                    <img src="./public/images/amenities-1.png" alt="The Leisure" class="section4-image">
-                </div>
 
-                <!-- Right Side - Content -->
-                <div class="section4-right">
-                    <!-- <h3 class="section4-content-heading">The Leisure</h3> -->
-                    <ul class="section4-list">
-                        <li class="section4-list-item">Grand Clubhouse</li>
-                        <li class="section4-list-item">Landscaped Entry Plaza</li>
-                        <li class="section4-list-item">Kids’ Play Area</li>
-                        <li class="section4-list-item">Toddlers’ Play Zone</li>
-                        <li class="section4-list-item">Rope Bridge Play Area</li>
-                        <li class="section4-list-item">Swing Park</li>
-                        <li class="section4-list-item">Open Lawn Area</li>
-                        <li class="section4-list-item">Aromatherapy Garden</li>
-                        <li class="section4-list-item">Herbal Garden</li>
-                        <li class="section4-list-item">Sculpture Garden (Peace Zone)</li>
-                        <li class="section4-list-item">Garden with Sit-Outs</li>
-                        <li class="section4-list-item">Senior Citizens’ Relaxation Zone</li>
-                        <li class="section4-list-item">Outdoor Yoga Deck</li>
-                        <li class="section4-list-item">Yoga Cabana</li>
-                        <li class="section4-list-item">Meditation Pavilion</li>
-                        <li class="section4-list-item">Fully Equipped Indoor Gym</li>
-                    </ul>
-                </div>
+        <!-- BOTTOM INFO GRID -->
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="icon">🛣️</div>
+                <p>Only 10 minutes from NH Bengaluru</p>
             </div>
-
-            <!-- Section 2: The Adventure -->
-            <div class="section4-content" data-section="1">
-                <!-- Left Side - Image -->
-                <div class="section4-left">
-                    <img src="./public/images/amenities-2.png" alt="The Adventure" class="section4-image">
-                </div>
-
-                <!-- Right Side - Content -->
-                <div class="section4-right">
-                    <!-- <h3 class="section4-content-heading">The Adventure</h3> -->
-                    <ul class="section4-list">
-                        <li class="section4-list-item">Outdoor Fitness Gym</li>
-                        <li class="section4-list-item">Zumba & Dance Floor</li>
-                        <li class="section4-list-item">Aerobics Studio</li>
-                        <li class="section4-list-item">Indoor Games Room (Chess & Carrom)</li>
-                        <li class="section4-list-item">Table Tennis Zone</li>
-                        <li class="section4-list-item">Billiards Room</li>
-                        <li class="section4-list-item">Multipurpose Hall</li>
-                        <li class="section4-list-item">Cafeteria</li>
-                        <li class="section4-list-item">Library & Reading Lounge</li>
-                        <li class="section4-list-item">Guest Rooms</li>
-                        <li class="section4-list-item">Clinic / First-Aid Center</li>
-                        <li class="section4-list-item">Cycling Track</li>
-                        <li class="section4-list-item">Jogging Track</li>
-                        <li class="section4-list-item">Futsal Court</li>
-                        <li class="section4-list-item">Basketball Court</li>
-                        <li class="section4-list-item">Pet Park / Pet Zone</li>
-                        <!-- <li class="section4-list-item">Community Gathering Space</li> -->
-                    </ul>
-                </div>
+            <div class="info-item">
+                <div class="icon">🚆</div>
+                <p>Only 30 minutes from Bengaluru Railway Station</p>
             </div>
-            <div class="section4-content" data-section="1">
-                <!-- Left Side - Image -->
-                <div class="section4-left">
-                    <img src="./public/images/amenities-3.png" alt="The Adventure" class="section4-image">
-                </div>
-
-                <!-- Right Side - Content -->
-                <div class="section4-right">
-                    <!-- <h3 class="section4-content-heading">The Adventure</h3> -->
-                    <ul class="section4-list">
-                        <li class="section4-list-item">Children’s Activity Lawn</li>
-                        <li class="section4-list-item">Event Lawn</li>
-                        <li class="section4-list-item">Amphitheatre Seating</li>
-                        <li class="section4-list-item">Water Feature / Reflective Pool</li>
-                        <li class="section4-list-item">Rainwater Harvesting System</li>
-                        <li class="section4-list-item">Underground Recharge Pits</li>
-                        <li class="section4-list-item">Underground Electrification</li>
-                        <li class="section4-list-item">Wide CC Roads</li>
-                        <li class="section4-list-item">Street Lighting</li>
-                        <li class="section4-list-item">24/7 CCTV Surveillance</li>
-                        <li class="section4-list-item">Secured Gated Entry</li>
-                        <li class="section4-list-item">Dedicated Visitor Parking</li>
-                        <li class="section4-list-item">Landscaped Walkways</li>
-                        <li class="section4-list-item">Seating Pergolas</li>
-                        <!-- <li class="section4-list-item">Open-Air Fitness Zones</li> -->
-                        <li class="section4-list-item">Senior Walking Track</li>
-                        <li class="section4-list-item">Eco-Friendly Green Spaces</li>
-                    </ul>
-                </div>
+            <div class="info-item">
+                <div class="icon">✈️</div>
+                <p>Kempegowda International Airport – 30 mins</p>
+            </div>
+            <div class="info-item">
+                <div class="icon">🏫</div>
+                <p>Top Schools around our Villa</p>
+            </div>
+            <div class="info-item">
+                <div class="icon">🏨</div>
+                <p>Top 3 Hospitals around our Villa</p>
+            </div>
+            <div class="info-item">
+                <div class="icon">🏢</div>
+                <p>KIADB-2 ITBT Head Quarters 1000 acres – 5 mins upcoming</p>
+            </div>
+            <div class="info-item">
+                <div class="icon">🚌</div>
+                <p>Devanahalli Bus stop – 8 mins</p>
+            </div>
+            <div class="info-item">
+                <div class="icon">🏙️</div>
+                <p>Brigade World Trade Centre – 2 mins</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 5 - A World of Experience -->
-    <!-- <section class="section5">
-        <div class="section5-container">
-            <h2 class="section5-heading">A WORLD OF EXPERIENCE</h2>
-            <div class="section5-icons-grid">
-                <div class="section5-icon-item">
-                    <img src="components/section5/zorbingpark.svg" alt="Zorbing Park" class="section5-icon">
-                    <p class="section5-icon-label">Zorbing Park</p>
+
+    <section
+        class="amenities-section">
+        <!-- HEADER -->
+        <div class="amenities-section-wrapper">
+            <div class="header-row">
+                <div class="header-left">
+                    <div class="label-tag">World-Class Living</div>
+                    <h2 class="section-title">Amenities &amp;
+                        <em>Lifestyle</em>
+                    </h2>
                 </div>
-                <div class="section5-icon-item">
-                    <img src="components/section5/Skating Rink.svg" alt="Skating Rink" class="section5-icon">
-                    <p class="section5-icon-label">Skating Rink</p>
+                <div class="header-right">
+                    <div class="slide-counter">
+                        <span id="currentSlide">1</span>
+                        /
+                        <span id="totalSlides">3</span>
+                    </div>
+                    <div class="nav-arrows">
+                        <button class="nav-btn" id="prevBtn" aria-label="Previous" disabled>
+                            <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <button class="nav-btn" id="nextBtn" aria-label="Next">
+                            <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div class="section5-icon-item">
-                    <img src="components/section5/Rock Climbing.svg" alt="Rock Climbing" class="section5-icon">
-                    <p class="section5-icon-label">Rock Climbing</p>
+            </div>
+
+            <!-- SLIDER -->
+            <div class="slider-viewport">
+                <div
+                    class="slides-track" id="slidesTrack">
+
+                    <!-- ── SLIDE 1: Recreation & Nature ── -->
+                    <div class="slide active">
+                        <div class="slide-image">
+                            <img src="https://images.unsplash.com/photo-1575783970733-1aaedde1db74?w=900&q=80" alt="Kids Play Area"/>
+                            <div class="slide-badge">Recreation &amp; Nature</div>
+                        </div>
+                        <div class="slide-content">
+                            <h3>Play, Relax &amp; Rejuvenate</h3>
+                            <div class="sub">Outdoor &amp; Wellness Amenities</div>
+                            <ul class="amenity-list">
+                                <li>Grand Clubhouse</li>
+                                <li>Landscaped Entry Plaza</li>
+                                <li>Kids' Play Area</li>
+                                <li>Toddlers' Play Zone</li>
+                                <li>Rope Bridge Play Area</li>
+                                <li>Swing Park</li>
+                                <li>Open Lawn Area</li>
+                                <li>Aromatherapy Garden</li>
+                                <li>Herbal Garden</li>
+                                <li>Sculpture Garden</li>
+                                <li>Garden with Sit-Outs</li>
+                                <li>Senior Citizens' Zone</li>
+                                <li>Outdoor Yoga Deck</li>
+                                <li>Yoga Cabana</li>
+                                <li>Meditation Pavilion</li>
+                                <li>Fully Equipped Indoor Gym</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 2: Sports & Social ── -->
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&q=80" alt="Pool and Fitness"/>
+                            <div class="slide-badge">Sports &amp; Social</div>
+                        </div>
+                        <div class="slide-content">
+                            <h3>Move, Play &amp; Connect</h3>
+                            <div class="sub">Fitness &amp; Community Spaces</div>
+                            <ul class="amenity-list">
+                                <li>Outdoor Fitness Gym</li>
+                                <li>Zumba &amp; Dance Floor</li>
+                                <li>Aerobics Studio</li>
+                                <li>Indoor Games Room</li>
+                                <li>Table Tennis Zone</li>
+                                <li>Billiards Room</li>
+                                <li>Multipurpose Hall</li>
+                                <li>Cafeteria</li>
+                                <li>Library &amp; Reading Lounge</li>
+                                <li>Guest Rooms</li>
+                                <li>Clinic / First-Aid Center</li>
+                                <li>Cycling Track</li>
+                                <li>Jogging Track</li>
+                                <li>Futsal Court</li>
+                                <li>Basketball Court</li>
+                                <li>Pet Park / Pet Zone</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ── SLIDE 3: Infrastructure & Sustainability ── -->
+                    <div class="slide">
+                        <div class="slide-image">
+                            <img src="https://images.unsplash.com/photo-1549558549-415fe4c37b60?w=900&q=80" alt="Jogging Track Park"/>
+                            <div class="slide-badge">Infrastructure &amp; Sustainability</div>
+                        </div>
+                        <div class="slide-content">
+                            <h3>Safe, Green &amp; Smart</h3>
+                            <div class="sub">Infrastructure &amp; Eco Features</div>
+                            <ul class="amenity-list">
+                                <li>Children's Activity Lawn</li>
+                                <li>Event Lawn</li>
+                                <li>Amphitheatre Seating</li>
+                                <li>Water Feature / Reflective Pool</li>
+                                <li>Rainwater Harvesting</li>
+                                <li>Underground Recharge Pits</li>
+                                <li>Underground Electrification</li>
+                                <li>Wide CC Roads</li>
+                                <li>Street Lighting</li>
+                                <li>24/7 CCTV Surveillance</li>
+                                <li>Secured Gated Entry</li>
+                                <li>Dedicated Visitor Parking</li>
+                                <li>Landscaped Walkways</li>
+                                <li>Seating Pergolas</li>
+                                <li>Senior Walking Track</li>
+                                <li>Eco-Friendly Green Spaces</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="section5-icon-item">
-                    <img src="components/section5/Obstacle Course.svg" alt="Obstacle Course" class="section5-icon">
-                    <p class="section5-icon-label">Obstacle Course</p>
-                </div>
-                
-                <div class="section5-icon-item">
-                    <img src="components/section5/Camping Zone.svg" alt="Camping Zone" class="section5-icon">
-                    <p class="section5-icon-label">Camping Zone</p>
-                </div>
-                <div class="section5-icon-item">
-                    <img src="components/section5/Tree House.svg" alt="Tree House" class="section5-icon">
-                    <p class="section5-icon-label">Tree House</p>
-                </div>
-                <div class="section5-icon-item">
-                    <img src="components/section5/Observatory Deck.svg" alt="Observatory Deck" class="section5-icon">
-                    <p class="section5-icon-label">Observatory Deck</p>
-                </div>
-                <div class="section5-icon-item">
-                    <img src="components/section5/Lake Pier.svg" alt="Lake Pier" class="section5-icon">
-                    <p class="section5-icon-label">Lake Pier</p>
-                </div>
+                <!-- /slides-track -->
+            </div>
+            <!-- /slider-viewport -->
+
+            <!-- DOTS -->
+            <div class="progress-dots" id="progressDots">
+                <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+                <button class="dot" data-index="1" aria-label="Slide 2"></button>
+                <button class="dot" data-index="2" aria-label="Slide 3"></button>
             </div>
         </div>
-    </section> -->
 
-    <!-- Section 6 - Master Plan -->
+    </section>
+
+
     <section class="section6" id="masterplan">
         <div class="section6-wrapper">
-            <!-- Plans Label -->
             <p class="section6-plans-label">PLANS</p>
 
-            <!-- Red Banner -->
             <div class="section6-red-banner">
-                <!-- <button class="section6-banner-arrow" id="planPrev" aria-label="Previous">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button> -->
                 <div class="section6-banner-content">
                     <h2 class="section6-banner-title">MASTER PLAN</h2>
-                    <!-- <h3 class="section6-banner-subtitle">PLAN</h3> -->
                 </div>
-                <!-- <button class="section6-banner-arrow" id="planNext" aria-label="Next">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button> -->
             </div>
 
-            <!-- Main Container - List and Image -->
             <div class="section6-container">
-                <!-- Left Side - List -->
                 <div class="section6-left">
                     <div class="section6-plan-header">
                         <h2 class="section6-plan-header-main">MASTER</h2>
@@ -404,23 +2405,18 @@
                             <p class="section6-plan-name">MEDIUM</p>
                             <p class="section6-plan-size">2000 Sq. Ft.</p>
                         </li>
-                        <!-- <li class="section6-plan-item">
-                            <p class="section6-plan-name">Euphoria</p>
+                        <li class="section6-plan-item">
+                            <p class="section6-plan-name">Large</p>
                             <p class="section6-plan-size">2400 Sq. Ft.</p>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
 
-                <!-- Right Side - Master Plan Image -->
-                <div class="section6-right">
-                    <!-- <img src="components/section6/page4.jpg" alt="Master Plan" class="section6-plan-image"> -->
-                    <!-- <img src="https://media.istockphoto.com/id/2227932205/photo/scaled-representation-of-urban-model-village-residential-area-model-village.webp?a=1&b=1&s=612x612&w=0&k=20&c=GokTDnvDT5di_zg_ZK72kNSXCRbE1JVcJIiJA3lDNu0=" alt="Master Plan" class="section6-plan-image"> -->
-                </div>
+                <div class="section6-right"></div>
             </div>
         </div>
     </section>
 
-    <!-- Section 7 - Configurations -->
     <section class="section7" id="Configurations">
         <div class="section7-container">
             <h2 class="section7-title">CONFIGURATIONS</h2>
@@ -436,12 +2432,17 @@
                     <tr>
                         <td>REGULAR</td>
                         <td>1500 SQ. FT.</td>
-                        <td>1.4 Cr* ONWARDS</td>
+                        <td>1.40 Cr* ONWARDS</td>
                     </tr>
                     <tr>
                         <td>MEDIUM</td>
                         <td>2000 SQ. FT.</td>
                         <td>1.86 Cr* ONWARDS</td>
+                    </tr>
+                    <tr>
+                        <td>LARGE</td>
+                        <td>2400 SQ. FT.</td>
+                        <td>2.24 Cr* ONWARDS</td>
                     </tr>
                 </tbody>
             </table>
@@ -450,17 +2451,14 @@
 
     <!-- Section 8 - Connectivity -->
     <section class="section8" id="Connectivity">
-        <div class="section8-container">
+        <div
+            class="section8-container">
             <!-- Left Side - Connectivity and Map -->
             <div class="section8-left">
                 <h2 class="section8-connectivity-title">CONNECTIVITY</h2>
                 <div class="section8-map-container">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.0724555859806!2d77.7483618!3d13.2207676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae02cbaad72819%3A0x56960c8bd6531685!2sThellahalli%20Gate!5e0!3m2!1sen!2sin!4v1770023145272!5m2!1sen!2sin"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <button class="section8-view-larger-button"
-                        onclick="window.open('https://maps.app.goo.gl/n7AbHunjhoRv6Czq5', '_blank')">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.0724555859806!2d77.7483618!3d13.2207676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae02cbaad72819%3A0x56960c8bd6531685!2sThellahalli%20Gate!5e0!3m2!1sen!2sin!4v1770023145272!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button class="section8-view-larger-button" onclick="window.open('https://maps.app.goo.gl/n7AbHunjhoRv6Czq5', '_blank')">
                         View larger map
                     </button>
                 </div>
@@ -470,7 +2468,7 @@
             <div class="section8-right">
                 <h3 class="section8-vicinity-title">KIADB Phase II - Devenhalli</h3>
                 <ul class="section8-vicinity-list">
-                    <li class="section8-vicinity-item"> </li>
+                    <li class="section8-vicinity-item"></li>
                     <li class="section8-vicinity-item">Chanakya University - 2 Mins</li>
                     <li class="section8-vicinity-item">KIADB Hi Tech Defence Aerospace - 1 Min</li>
                     <li class="section8-vicinity-item">Brigade Innovation Gardens - 2 Mins</li>
@@ -481,64 +2479,144 @@
         </div>
     </section>
 
+
+    <!-- Root wrapper — all elements scoped inside .gsl-wrap -->
+    <div class="gsl-wrap">
+
+        <header class="gsl-header">
+            <p class="gsl-eyebrow">Visual Collection</p>
+            <h2 class="gsl-heading">Our
+                <em>Gallery</em>
+            </h2>
+        </header>
+
+        <section class="gsl-section">
+            <button class="gsl-arrow gsl-arrow-prev" id="gslPrevBtn" aria-label="Previous">
+                <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <div class="gsl-viewport">
+                <div class="gsl-track" id="gslTrack"></div>
+            </div>
+
+            <button class="gsl-arrow gsl-arrow-next" id="gslNextBtn" aria-label="Next">
+                <svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+
+            <div class="gsl-footer">
+                <div class="gsl-dots" id="gslDots"></div>
+                <p class="gsl-counter" id="gslCounter"></p>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="gsl-lightbox" id="gslLightbox" role="dialog" aria-modal="true">
+            <div class="gsl-lb-backdrop" id="gslLbBackdrop"></div>
+
+            <button class="gsl-lb-close" id="gslLbClose" aria-label="Close">
+                <svg viewbox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+
+            <div class="gsl-lb-inner">
+                <button class="gsl-lb-arrow" id="gslLbPrev" aria-label="Previous">
+                    <svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+
+                <div class="gsl-lb-img-wrap">
+                    <img id="gslLbImg" src="" alt=""/>
+                    <p class="gsl-lb-page">
+                        <strong id="gslLbCur">1</strong>
+                        /
+                        <span id="gslLbTot">1</span>
+                    </p>
+                </div>
+
+                <button class="gsl-lb-arrow" id="gslLbNext" aria-label="Next">
+                    <svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+
+            <div class="gsl-lb-thumbs" id="gslLbThumbs"></div>
+        </div>
+
+    </div>
+    <!-- /.gsl-wrap -->
+
     <!-- Section 9 - FAQ -->
     <section class="section9" id="FAQ">
         <div class="section9-container">
-            <h2 class="section9-title">FREQUENTLY ASKED QUESTIONS</h2>
+            <h2 class="section9-title">FREQUENTLY ASKED QUESTIONS (FAQ)</h2>
             <div class="section9-divider"></div>
+
             <ul class="section9-faq-list">
+
                 <li class="section9-faq-item">
                     <button class="section9-question">
-                        <span>Why should I buy a plot in Nisarga Boulevard?</span>
+                        <span>Why should I invest in a plot in Devanahalli, Bangalore?</span>
                         <span class="section9-question-icon">+</span>
                     </button>
                     <div class="section9-answer">
-                        <p class="section9-answer-content">Nisarga Boulevard, located in Devanahalli, off the STRR, is
-                            distinguished as one of the good-plotted developments in North Bangalore. This project
-                            offers convenient accessibility to Kempegowda International Airport Road, Hyderabad Road,
-                            STRR, and Bengaluru City, facilitating seamless connectivity.</p>
+                        <p class="section9-answer-content">
+                            Devanahalli is one of North Bangalore’s fastest-growing corridors, driven by its proximity
+                                                                                                                                            to Kempegowda International Airport and major infrastructure developments, making it a
+                                                                                                                                            high-potential investment destination.
+                        </p>
                     </div>
                 </li>
+
                 <li class="section9-faq-item">
                     <button class="section9-question">
-                        <span>Is it a good choice to invest in Nisarga Boulevard?</span>
+                        <span>What landmarks and facilities are nearby?</span>
                         <span class="section9-question-icon">+</span>
                     </button>
                     <div class="section9-answer">
-                        <p class="section9-answer-content">Yes, it is a good choice to invest in Nisarga Boulevard. The
-                            project shows significant potential for appreciation in the coming years, given the ongoing
-                            government investments and commercial advancements. Projections indicate the creation of
-                            more than 5,00,000 jobs within the next five years, further enhancing its appeal.</p>
+                        <p class="section9-answer-content">
+                            Nisarga Boulevard is close to the international airport, business parks, reputed schools and
+                                                                                                                                            colleges, hospitals, shopping malls, and entertainment hubs, ensuring everyday convenience
+                                                                                                                                            and connectivity.
+                        </p>
                     </div>
                 </li>
+
                 <li class="section9-faq-item">
                     <button class="section9-question">
-                        <span>What is the total land size & the number of plots available at Nisarga Boulevard?</span>
+                        <span>Is Nisarga Boulevard RERA approved?</span>
                         <span class="section9-question-icon">+</span>
                     </button>
                     <div class="section9-answer">
-                        <p class="section9-answer-content">The total land size of the plot is 20 acres and the number of
-                            plots available is 250.</p>
+                        <p class="section9-answer-content">
+                            Yes. Nisarga Boulevard by PGR Buildtech Pvt. Ltd. is RERA approved and fully compliant with
+                                                                                                                                            all regulatory norms and legal requirements.
+                        </p>
                     </div>
                 </li>
+
                 <li class="section9-faq-item">
                     <button class="section9-question">
-                        <span>What are the nearby landmarks?</span>
+                        <span>Why is RERA approval important?</span>
                         <span class="section9-question-icon">+</span>
                     </button>
                     <div class="section9-answer">
-                        <p class="section9-answer-content">Following are the surrounding landmarks in proximity to
-                            Nisarga Boulevard.</p>
-                        <ul class="section9-answer-list">
-                            <li>KIADB Phase II - Devenhalli </li>
-                            <li>Chanakya University - 2 Mins</li>
-                            <li>KIADB Hi Tech Defence Aerospace - 1 Min</li>
-                            <li>Brigade Innovation Gardens - 2 Mins</li>
-                            <li>Brigade Innovation Gardens - 2 Mins</li>
-                            <li>Bangalore International Airport - 20 Mins</li>
-                        </ul>
+                        <p class="section9-answer-content">
+                            RERA approval ensures transparency, legal security, timely delivery, and adherence to
+                                                                                                                                            quality and financial standards, offering greater peace of mind to buyers.
+                        </p>
                     </div>
                 </li>
+
+                <li class="section9-faq-item">
+                    <button class="section9-question">
+                        <span>Are plots more affordable than apartments in Devanahalli?</span>
+                        <span class="section9-question-icon">+</span>
+                    </button>
+                    <div class="section9-answer">
+                        <p class="section9-answer-content">
+                            Yes. Plotted developments are generally more affordable than apartments and offer greater
+                                                                                                                                            flexibility in design, budget planning, and long-term value appreciation.
+                        </p>
+                    </div>
+                </li>
+
             </ul>
         </div>
     </section>
@@ -546,45 +2624,45 @@
     <!-- Section 10 - Contact/Enquiry Form -->
 
     <!-- <section class="section10" id="Enquiry">
-        <div class="section10-container">
-            <div class="section10-left">
-                <div class="section10-blob"></div>
-                <div class="section10-form-container">
-                    <h2 class="section10-title">ENQUIRE NOW</h2>
-                    <form class="section10-form">
-                        <div class="section10-form-group">
-                            <input type="text" class="section10-input" placeholder="Full Name*" required>
-                        </div>
-                        <div class="section10-form-group">
-                            <input type="email" class="section10-input" placeholder="Email*" required>
-                        </div>
-                        <div class="section10-form-row">
-                            <div class="section10-form-group">
-                                <select class="section10-select" required>
-                                    <option value="">India (91)</option>
-                                    <option value="91">India (91)</option>
-                                </select>
-                            </div>
-                            <div class="section10-form-group">
-                                <input type="tel" class="section10-input" placeholder="Mobile Number*" required>
-                            </div>
-                        </div>
-                        <div class="section10-form-group">
-                            <textarea class="section10-textarea" placeholder="Type Your Query" rows="4"></textarea>
-                        </div>
-                        <button type="submit" class="section10-submit-button">SUBMIT</button>
-                    </form>
-                </div>
-            </div>
-            <div class="section10-right">
-                <img src="./public/images/contact-us.png" alt="Contact" class="section10-image">
-            </div>
-        </div>
-    </section> -->
+                                                                    <div class="section10-container">
+                                                                        <div class="section10-left">
+                                                                            <div class="section10-blob"></div>
+                                                                            <div class="section10-form-container">
+                                                                                <h2 class="section10-title">ENQUIRE NOW</h2>
+                                                                                <form class="section10-form">
+                                                                                    <div class="section10-form-group">
+                                                                                        <input type="text" class="section10-input" placeholder="Full Name*" required>
+                                                                                    </div>
+                                                                                    <div class="section10-form-group">
+                                                                                        <input type="email" class="section10-input" placeholder="Email*" required>
+                                                                                    </div>
+                                                                                    <div class="section10-form-row">
+                                                                                        <div class="section10-form-group">
+                                                                                            <select class="section10-select" required>
+                                                                                                <option value="">India (91)</option>
+                                                                                                <option value="91">India (91)</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <div class="section10-form-group">
+                                                                                            <input type="tel" class="section10-input" placeholder="Mobile Number*" required>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="section10-form-group">
+                                                                                        <textarea class="section10-textarea" placeholder="Type Your Query" rows="4"></textarea>
+                                                                                    </div>
+                                                                                    <button type="submit" class="section10-submit-button">SUBMIT</button>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="section10-right">
+                                                                            <img src="./public/images/contact-us.png" alt="Contact" class="section10-image">
+                                                                        </div>
+                                                                    </div>
+                                                                </section> -->
 
     <!-- Section 10 - Contact/Enquiry Form -->
-    <section class="section10" id="Enquiry">
-        <div class="section10-container">
+        <section class="section10" id="Enquiry"> <div
+            class="section10-container">
             <!-- Left Side - Enquiry Form -->
             <div class="section10-left">
                 <div class="section10-blob"></div>
@@ -609,13 +2687,11 @@
                                 </select>
                             </div>
                             <div class="section10-form-group">
-                                <input type="tel" id="phone" class="section10-input" placeholder="Mobile Number*"
-                                    required>
+                                <input type="tel" id="phone" class="section10-input" placeholder="Mobile Number*" required>
                             </div>
                         </div>
                         <div class="section10-form-group">
-                            <textarea id="query" class="section10-textarea" placeholder="Type Your Query"
-                                rows="4"></textarea>
+                            <textarea id="query" class="section10-textarea" placeholder="Type Your Query" rows="4"></textarea>
                         </div>
                         <button type="submit" class="section10-submit-button" id="submitBtn">SUBMIT</button>
 
@@ -658,23 +2734,24 @@
             };
 
             // Basic validation
-            if (!payload.name || !payload.email || !payload.phone) {
-                errorMsg.textContent = "❌ Please fill in all required fields.";
-                errorMsg.style.display = "block";
-                return;
-            }
+            // if (! payload.name || ! payload.email || ! payload.phone) {
+            //     errorMsg.textContent = "❌ Please fill in all required fields.";
+            //     errorMsg.style.display = "block";
+            //     return;
+            // }
 
             // Disable button to prevent double submission
             submitBtn.disabled = true;
             submitBtn.textContent = "Submitting...";
 
-            try {
-                // 🔁 Replace with your actual Google Cloud Function URL
+            try { // 🔁 Replace with your actual Google Cloud Function URL
                 const CLOUD_FUNCTION_URL = "https://emailjsfuntions-428145106157.asia-south1.run.app/Nisarga-Boulevard";
 
                 const response = await fetch(CLOUD_FUNCTION_URL, {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
                     body: JSON.stringify(payload)
                 });
 
@@ -704,15 +2781,31 @@
     <script src="components/section10/section10.js"></script>
 
     <!-- Section 11 - Footer -->
-    <footer class="section11">
+    <footer
+        class="section11">
         <!-- Upper Section - White Background -->
         <div class="section11-upper">
-            <div class="section11-upper-container">
+            <div
+                class="section11-upper-container">
+
                 <!-- Left Side - Company Information -->
                 <div class="section11-left">
                     <div class="section11-logo-container">
-                        <img src="./public/images/logo-white.png" alt="Nisarga Boulevard Logo" class="section11-logo">
-                        <!-- <img src="components/section11/logo-50years.svg" alt="50 Years Badge" class="section11-50years-badge"> -->
+                        <img
+                        src="./public/images/PGR-LOGO.png" alt="Nisarga Boulevard Logo" class="section11-pgr-logo">
+                    <!-- <img src="components/section11/logo-50years.svg" alt="50 Years Badge" class="section11-50years-badge"> -->
+                    </div>
+                    <p class="section11-address">
+                        PGR Buildtech Private Limited No. 682, 3rd Floor, NTI Phase 2 Layout, Rajiv Gandhi Nagar, Kodigehalli, Bangaluru 560092
+                    </p>
+                    <p class="footer-sub-links">info@pgrbuildtech.com</p>
+                    <p class="footer-sub-links">98861 61155</p>
+                </div>
+                <div class="section11-left">
+                    <div class="section11-logo-container">
+                        <img
+                        src="./public/images/logo-white.png" alt="Nisarga Boulevard Logo" class="section11-logo">
+                    <!-- <img src="components/section11/logo-50years.svg" alt="50 Years Badge" class="section11-50years-badge"> -->
                     </div>
                     <p class="section11-address">
                         Address: 6PCX+88 Harlur, Bangalore, Karnataka - 562110
@@ -722,14 +2815,14 @@
 
                 <!-- Middle Section - Other Projects -->
                 <!-- <div class="section11-middle">
-                    <div class="section11-projects-header">
-                        <h3 class="section11-projects-title">OTHER PROJECTS</h3>
-                        <a href="#" class="section11-view-all">
-                            <span class="section11-arrow">→</span>
-                            <span>VIEW ALL PROPERTIES</span>
-                        </a>
-                    </div>
-                </div> -->
+                                                                                                                                                                                                                                            <div class="section11-projects-header">
+                                                                                                                                                                                                                                                <h3 class="section11-projects-title">OTHER PROJECTS</h3>
+                                                                                                                                                                                                                                                <a href="#" class="section11-view-all">
+                                                                                                                                                                                                                                                    <span class="section11-arrow">→</span>
+                                                                                                                                                                                                                                                    <span>VIEW ALL PROPERTIES</span>
+                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                        </div> -->
                 <div class="section11-footer-links-container">
                     <h3 class="section11-footer-links-title">QUICK LINKS</h3>
                     <div class="section11-footer-links-flex">
@@ -752,58 +2845,585 @@
                     <h2 class="follow-us-on-title">Follow Us On</h2>
                     <div class="section11-social-container">
                         <div class="section11-social-icons">
-                            <svg class="section11-social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            <svg class="section11-social-icon" viewbox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
-                            <svg class="section11-social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.309c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z" />
+                            <svg class="section11-social-icon" viewbox="0 0 24 24" fill="currentColor">
+                                <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.309c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"/>
                             </svg>
                             <!-- <svg class="section11-social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                                                                                                                                                                                                                                                                                                                                                                                                </svg> -->
                             <!-- <svg class="section11-social-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                                                                                                                                                                                                                                                                                                                                                                                                </svg> -->
                         </div>
                         <!-- <div class="section11-certification">
-                            <div class="section11-cert-badge">
-                                <div class="section11-cert-banner">Great Place To Work</div>
-                                <div class="section11-cert-shield">
-                                    Certified<br>MAY 2025-MAY 2026<br>INDIA
-                                </div>
-                            </div>
-                        </div> -->
+                                                                                                                                                                                                                                                                                                                                                            <div class="section11-cert-badge">
+                                                                                                                                                                                                                                                                                                                                                                <div class="section11-cert-banner">Great Place To Work</div>
+                                                                                                                                                                                                                                                                                                                                                                <div class="section11-cert-shield">
+                                                                                                                                                                                                                                                                                                                                                                    Certified<br>MAY 2025-MAY 2026<br>INDIA
+                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
+        <div class="disclaimer">
+            <p>Disclaimer: The plans, designs, and images shown in this brochure are for illustrative purposes only and
+                                                                                are subject to change. The actual constructed product may vary in area, dimensions, design, and
+                                                                                specifications. The developers reserve the right to make modifications as deemed necessary without prior
+                                                                                notice. This website does not constitute a legal offer or contract.</p>
+        </div>
         <div class="footer-bottom">
             <p>
                 © 2026 Nisarga Boulevard. All Rights Reserved.
-                Digital Partner
+                                                                                Digital Partner
                 <a href="https://www.pinakkaa.com" target="_blank">Pinakkaa</a>
             </p>
         </div>
 
         <!-- Bottom Section - Maroon Background -->
         <!-- <div class="section11-bottom">
-            <div class="section11-bottom-container">
-                <div class="section11-nav-links">
-                    <a href="#" class="section11-nav-link">Residential</a>
-                    <a href="#" class="section11-nav-link">Luxury</a>
-                    <a href="#" class="section11-nav-link">Premium</a>
-                    <a href="#" class="section11-nav-link">Plotted</a>
-                    <a href="#" class="section11-nav-link">Disclaimer</a>
-                    <a href="#" class="section11-nav-link">T&C</a>
-                    <a href="#" class="section11-nav-link">Privacy</a>
-                </div>
-                <p class="section11-copyright">© 2026 by Century Real Estate Holdings Pvt. Ltd. All rights reserved.</p>
-            </div>
-        </div> -->
+                                                                                                                            <div class="section11-bottom-container">
+                                                                                                                                <div class="section11-nav-links">
+                                                                                                                                    <a href="#" class="section11-nav-link">Residential</a>
+                                                                                                                                    <a href="#" class="section11-nav-link">Luxury</a>
+                                                                                                                                    <a href="#" class="section11-nav-link">Premium</a>
+                                                                                                                                    <a href="#" class="section11-nav-link">Plotted</a>
+                                                                                                                                    <a href="#" class="section11-nav-link">Disclaimer</a>
+                                                                                                                                    <a href="#" class="section11-nav-link">T&C</a>
+                                                                                                                                    <a href="#" class="section11-nav-link">Privacy</a>
+                                                                                                                                </div>
+                                                                                                                                <p class="section11-copyright">© 2026 by Century Real Estate Holdings Pvt. Ltd. All rights reserved.</p>
+                                                                                                                            </div>
+                                                                                                                        </div> -->
 
     </footer>
-</body>
+    <script>
+        (function () {
+            const track = document.getElementById('slidesTrack');
+            const slides = track.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dots = document.querySelectorAll('.dot');
+            const counter = document.getElementById('currentSlide');
+            const total = slides.length;
+            let current = 0;
 
-</html>
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                current = Math.max(0, Math.min(index, total - 1));
+                slides[current].classList.add('active');
+                track.style.transform = `translateX(-${
+                    current * 100
+                }%)`;
+                counter.textContent = current + 1;
+                prevBtn.disabled = current === 0;
+                nextBtn.disabled = current === total - 1;
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            }
+
+            prevBtn.addEventListener('click', () => goTo(current - 1));
+            nextBtn.addEventListener('click', () => goTo(current + 1));
+            dots.forEach(d => d.addEventListener('click', () => goTo(+ d.dataset.index)));
+
+            // keyboard
+            document.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft') 
+                    goTo(current - 1);
+                
+
+
+                if (e.key === 'ArrowRight') 
+                    goTo(current + 1);
+                
+
+
+            });
+
+            // touch swipe
+            let startX = 0;
+            track.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+            }, {passive: true});
+            track.addEventListener('touchend', e => {
+                const dx = e.changedTouches[0].clientX - startX;
+                if (Math.abs(dx) > 50) 
+                    goTo(dx < 0 ? current + 1 : current - 1);
+                
+
+
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            const overlay = document.getElementById('modalOverlay');
+            const openBtn = document.getElementById('openModalBtn');
+            const closeBtn = document.getElementById('closeModalBtn');
+            const closeSuccBtn = document.getElementById('closeSuccessBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            const formView = document.getElementById('formView');
+            const successView = document.getElementById('successView');
+            const spinner = document.getElementById('spinner');
+            const btnLabel = document.getElementById('btnLabel');
+            const btnIcon = document.getElementById('btnIcon');
+
+            // ── Open ──
+            openBtn.addEventListener('click', () => {
+                overlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => document.getElementById('fullName').focus(), 350);
+            });
+
+            // ── Close ──
+            function closeModal() {
+                overlay.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            closeSuccBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', e => {
+                if (e.target === overlay) 
+                    closeModal();
+                
+
+
+            });
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') 
+                    closeModal();
+                
+
+
+            });
+
+            // Reset form when overlay finishes closing
+            overlay.addEventListener('transitionend', () => {
+                if (! overlay.classList.contains('open')) 
+                    resetForm();
+                
+
+
+            });
+
+            function resetForm() {
+                ['fullName', 'phone', 'email', 'message'].forEach(id => {
+                    document.getElementById(id).value = '';
+                });
+                ['fullName', 'phone', 'email'].forEach(id => {
+                    document.getElementById(id).classList.remove('error');
+                });
+                ['nameErr', 'phoneErr', 'emailErr'].forEach(id => {
+                    document.getElementById(id).classList.remove('show');
+                });
+                formView.style.display = '';
+                successView.style.display = 'none';
+                submitBtn.disabled = false;
+                btnLabel.textContent = 'Download Brochure';
+                spinner.style.display = 'none';
+                btnIcon.style.display = '';
+            }
+
+            // ── Live error clear ──
+            [
+                [
+                    'fullName', 'nameErr'
+                ],
+                [
+                    'phone', 'phoneErr'
+                ],
+                [
+                    'email', 'emailErr'
+                ]
+            ].forEach(([id, errId]) => {
+                document.getElementById(id).addEventListener('input', () => {
+                    document.getElementById(id).classList.remove('error');
+                    document.getElementById(errId).classList.remove('show');
+                });
+            });
+
+            // ── Validation ──
+            function validate() {
+                let ok = true;
+                const name = document.getElementById('fullName');
+                const phone = document.getElementById('phone');
+                const email = document.getElementById('email');
+
+                // Name
+                if (! name.value.trim() || name.value.trim().length < 2) {
+                    name.classList.add('error');
+                    document.getElementById('nameErr').classList.add('show');
+                    ok = false;
+                }
+
+                // Phone
+                const phoneVal = phone.value.trim().replace(/\s|-/g, '');
+                if (! phoneVal || !/^\d{6,15}$/.test(phoneVal)) {
+                    phone.classList.add('error');
+                    document.getElementById('phoneErr').classList.add('show');
+                    ok = false;
+                }
+
+                // Email
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+                    email.classList.add('error');
+                    document.getElementById('emailErr').classList.add('show');
+                    ok = false;
+                }
+
+                return ok;
+            }
+
+            // ── Submit ──
+            submitBtn.addEventListener('click', () => {
+                if (! validate()) 
+                    return;
+                
+
+
+                // Loading state
+                submitBtn.disabled = true;
+                btnLabel.textContent = 'Preparing your brochure…';
+                spinner.style.display = 'block';
+                btnIcon.style.display = 'none';
+
+                setTimeout(() => { // Trigger PDF download
+                    const a = document.createElement('a');
+                    a.href = './nisarga-boulevard.pdf';
+                    a.download = 'nisarga-boulevard.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+
+                    // Show success
+                    formView.style.display = 'none';
+                    successView.style.display = 'flex';
+                }, 1500);
+            });
+        })();
+    </script>
+    <img src="" alt="">
+    <script>
+        (function () { /* ── Data ── */
+            var gslImages = [
+                {
+                    src: './public/gallery/1.png',
+                    alt: ''
+                },
+                {
+                    src: './public/gallery/2.png',
+                    alt: ''
+                },
+                {
+                    src: './public/gallery/3.png',
+                    alt: ''
+                },
+                {
+                    src: './public/gallery/4.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/5.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/6.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/7.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/8.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/9.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/10.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/11.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/12.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/13.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/14.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/15.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/16.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/17.png',
+                    alt: ''
+                }, {
+                    src: './public/gallery/18.png',
+                    alt: ''
+                },
+            ];
+
+            var GSL_ORIG = gslImages.length;
+            var GSL_CLONES = 4;
+            var GSL_GAP = 18;
+
+            /* ── DOM refs ── */
+            var gslTrack = document.getElementById('gslTrack');
+            var gslPrevBtn = document.getElementById('gslPrevBtn');
+            var gslNextBtn = document.getElementById('gslNextBtn');
+            var gslDotsEl = document.getElementById('gslDots');
+            var gslCounterEl = document.getElementById('gslCounter');
+            var gslLightbox = document.getElementById('gslLightbox');
+            var gslLbImg = document.getElementById('gslLbImg');
+            var gslLbCur = document.getElementById('gslLbCur');
+            var gslLbTot = document.getElementById('gslLbTot');
+            var gslLbThumbs = document.getElementById('gslLbThumbs');
+            var gslLbPrev = document.getElementById('gslLbPrev');
+            var gslLbNext = document.getElementById('gslLbNext');
+
+            /* ── Build cloned slide set ── */
+            var gslFullSet = gslImages.slice(- GSL_CLONES).concat(gslImages, gslImages.slice(0, GSL_CLONES));
+
+            gslFullSet.forEach(function (img, i) {
+                var realIdx = ((i - GSL_CLONES) % GSL_ORIG + GSL_ORIG) % GSL_ORIG;
+                var slide = document.createElement('div');
+                slide.className = 'gsl-slide';
+                slide.innerHTML = '<img src="' + img.src + '" alt="' + img.alt + '" loading="lazy" />' + '<button class="gsl-expand-btn" aria-label="Expand">' + '<svg viewBox="0 0 24 24">' + '<polyline points="15 3 21 3 21 9"/>' + '<polyline points="9 21 3 21 3 15"/>' + '<line x1="21" y1="3" x2="14" y2="10"/>' + '<line x1="3" y1="21" x2="10" y2="14"/>' + '</svg>' + '</button>';
+                slide.addEventListener('click', (function (ri) {
+                    return function () {
+                        gslOpenLightbox(ri);
+                    };
+                })(realIdx));
+                gslTrack.appendChild(slide);
+            });
+
+            /* ── Slider state ── */
+            var gslCurReal = 0;
+            var gslIsAnimating = false;
+            var gslAutoTimer;
+
+            function gslSlideW() {
+                var s = gslTrack.querySelector('.gsl-slide');
+                return s ? s.offsetWidth + GSL_GAP : 318;
+            }
+
+            function gslTrackIdx(real) {
+                return real + GSL_CLONES;
+            }
+
+            function gslApplyPos(trackIdx, animate) {
+                gslTrack.style.transition = animate ? 'transform 0.58s cubic-bezier(0.77,0,0.175,1)' : 'none';
+                gslTrack.style.transform = 'translateX(-' + (
+                    trackIdx * gslSlideW()
+                ) + 'px)';
+            }
+
+            function gslRefreshUI() {
+                var dots = gslDotsEl.querySelectorAll('.gsl-dot');
+                dots.forEach(function (d, i) {
+                    d.classList.toggle('gsl-dot-active', i === gslCurReal);
+                });
+                // gslCounterEl.innerHTML = '<strong>' + (
+                //     gslCurReal + 1
+                // ) + '</strong> / ' + GSL_ORIG;
+            }
+
+            function gslGoDir(dir) {
+                if (gslIsAnimating) 
+                    return;
+                
+
+                gslIsAnimating = true;
+                gslApplyPos(gslTrackIdx(gslCurReal) + dir, true);
+                setTimeout(function () {
+                    gslCurReal = (gslCurReal + dir + GSL_ORIG) % GSL_ORIG;
+                    gslApplyPos(gslTrackIdx(gslCurReal), false);
+                    gslIsAnimating = false;
+                    gslRefreshUI();
+                }, 600);
+            }
+
+            /* Init */
+            gslApplyPos(gslTrackIdx(gslCurReal), false);
+            gslRefreshUI();
+
+            /* Build dots */
+            for (var di = 0; di < GSL_ORIG; di++) {
+                var dot = document.createElement('button');
+                dot.className = 'gsl-dot' + (
+                di === 0 ? ' gsl-dot-active' : ''
+            );
+                dot.setAttribute('aria-label', 'Image ' + (
+                    di + 1
+                ));
+                dot.addEventListener('click', (function (idx) {
+                    return function () {
+                        if (gslIsAnimating) 
+                            return;
+                        
+
+                        gslCurReal = idx;
+                        gslApplyPos(gslTrackIdx(gslCurReal), false);
+                        gslRefreshUI();
+                    };
+                })(di));
+                gslDotsEl.appendChild(dot);
+            }
+
+            gslPrevBtn.addEventListener('click', function () {
+                gslGoDir(-1);
+            });
+            gslNextBtn.addEventListener('click', function () {
+                gslGoDir(1);
+            });
+
+            /* Auto-play */
+            function gslStartAuto() {
+                clearInterval(gslAutoTimer);
+                gslAutoTimer = setInterval(function () {
+                    gslGoDir(1);
+                }, 3800);
+            }
+            function gslStopAuto() {
+                clearInterval(gslAutoTimer);
+            }
+
+            gslStartAuto();
+            gslTrack.parentElement.addEventListener('mouseenter', gslStopAuto);
+            gslTrack.parentElement.addEventListener('mouseleave', gslStartAuto);
+
+            /* Keyboard — slider */
+            document.addEventListener('keydown', function (e) {
+                if (gslLightbox.classList.contains('gsl-lb-open')) 
+                    return;
+                
+
+                if (e.key === 'ArrowLeft') 
+                    gslGoDir(-1);
+                
+
+                if (e.key === 'ArrowRight') 
+                    gslGoDir(1);
+                
+
+            });
+
+            /* Touch swipe — slider */
+            var gslTx0 = 0;
+            gslTrack.addEventListener('touchstart', function (e) {
+                gslTx0 = e.touches[0].clientX;
+                gslStopAuto();
+            }, {passive: true});
+            gslTrack.addEventListener('touchend', function (e) {
+                var d = gslTx0 - e.changedTouches[0].clientX;
+                if (Math.abs(d) > 40) 
+                    gslGoDir(d > 0 ? 1 : -1);
+                
+
+                gslStartAuto();
+            });
+
+            window.addEventListener('resize', function () {
+                gslApplyPos(gslTrackIdx(gslCurReal), false);
+            });
+
+            /* ── Lightbox ── */
+            var gslLbIdx = 0;
+            gslLbTot.textContent = GSL_ORIG;
+
+            /* Build thumbnails */
+            gslImages.forEach(function (img, i) {
+                var thumb = document.createElement('div');
+                thumb.className = 'gsl-lb-thumb';
+                thumb.innerHTML = '<img src="' + img.src + '" alt="' + img.alt + '" loading="lazy" />';
+                thumb.addEventListener('click', (function (idx) {
+                    return function () {
+                        gslSetLightbox(idx);
+                    };
+                })(i));
+                gslLbThumbs.appendChild(thumb);
+            });
+
+            function gslSetLightbox(idx) {
+                gslLbIdx = (idx + GSL_ORIG) % GSL_ORIG;
+                gslLbImg.style.opacity = '0';
+                gslLbImg.style.transform = 'scale(0.97)';
+                gslLbImg.style.transition = 'opacity 0.16s, transform 0.16s';
+                setTimeout(function () {
+                    gslLbImg.src = gslImages[gslLbIdx].src;
+                    gslLbImg.alt = gslImages[gslLbIdx].alt;
+                    gslLbCur.textContent = gslLbIdx + 1;
+                    gslLbImg.style.opacity = '1';
+                    gslLbImg.style.transform = 'scale(1)';
+                }, 160);
+                var thumbs = gslLbThumbs.querySelectorAll('.gsl-lb-thumb');
+                thumbs.forEach(function (t, i) {
+                    t.classList.toggle('gsl-lb-thumb-active', i === gslLbIdx);
+                });
+            }
+
+            function gslOpenLightbox(idx) {
+                gslSetLightbox(idx);
+                gslLightbox.classList.add('gsl-lb-open');
+                document.body.style.overflow = 'hidden';
+                gslStopAuto();
+            }
+
+            function gslCloseLightbox() {
+                gslLightbox.classList.remove('gsl-lb-open');
+                document.body.style.overflow = '';
+                gslStartAuto();
+            }
+
+            document.getElementById('gslLbClose').addEventListener('click', gslCloseLightbox);
+            document.getElementById('gslLbBackdrop').addEventListener('click', gslCloseLightbox);
+            gslLbPrev.addEventListener('click', function () {
+                gslSetLightbox(gslLbIdx - 1);
+            });
+            gslLbNext.addEventListener('click', function () {
+                gslSetLightbox(gslLbIdx + 1);
+            });
+
+            /* Keyboard — lightbox */
+            document.addEventListener('keydown', function (e) {
+                if (! gslLightbox.classList.contains('gsl-lb-open')) 
+                    return;
+                
+
+                if (e.key === 'Escape') 
+                    gslCloseLightbox();
+                
+
+                if (e.key === 'ArrowLeft') 
+                    gslSetLightbox(gslLbIdx - 1);
+                
+
+                if (e.key === 'ArrowRight') 
+                    gslSetLightbox(gslLbIdx + 1);
+                
+
+            });
+
+            /* Touch swipe — lightbox */
+            var gslLbTx = 0;
+            gslLightbox.addEventListener('touchstart', function (e) {
+                gslLbTx = e.touches[0].clientX;
+            }, {passive: true});
+            gslLightbox.addEventListener('touchend', function (e) {
+                var d = gslLbTx - e.changedTouches[0].clientX;
+                if (Math.abs(d) > 40) 
+                    gslSetLightbox(gslLbIdx + (d > 0 ? 1 : -1));
+                
+
+            });
+
+        })(); /* end IIFE — nothing leaks to global scope */
+    </script>
+</body></html>

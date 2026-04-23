@@ -15,8 +15,9 @@
 .section11-upper-container {
     max-width: 1400px;
     width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    /* display: grid; */
+    /* grid-template-columns: auto 1fr auto; */
+    display: flex;
     gap: 4rem;
     align-items: flex-start;
 }
@@ -25,7 +26,7 @@
 .section11-left {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    /* gap: 1.5rem; */
     align-items: flex-start;
     padding: 2rem 0rem;
 }
@@ -40,6 +41,10 @@
     height: auto;
     width: 140px;
 }
+.section11-pgr-logo{
+    width: 60px;
+    height: 60px;
+}
 
 .section11-50years-badge {
     height: 80px;
@@ -53,7 +58,7 @@
     font-weight: 400;
     line-height: 1.6;
     max-width: 400px;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
 }
 
 /* Middle Section - Other Projects */
@@ -114,6 +119,7 @@
     gap: 2rem;
     align-items: flex-end;
     height: 100%;
+    margin-top: 1.5rem;
     /* justify-content: center; */
 }
 
@@ -233,6 +239,8 @@
     .section11-upper-container {
         grid-template-columns: 1fr;
         gap: 3rem;
+        flex-direction: column;
+        gap: 0.1rem;
     }
 
     .section11-left,
@@ -313,7 +321,20 @@
     align-items: left;
     text-align: left;
     justify-content: center;
-    margin-left: 15rem;
+    margin-left: 8rem;
+    margin-top: 1.5rem;
+}
+.disclaimer{
+    background-color: #7a3f05;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.disclaimer p{
+    max-width: 1200px;
+    text-align: center;
+    padding: 1rem 0;
 }
 .section11-footer-links-title{
     font-size: 1.3rem;

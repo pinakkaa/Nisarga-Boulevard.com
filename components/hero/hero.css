@@ -38,11 +38,21 @@
 
 /* Set background images */
 #heroImage1 {
-    background-image: url('../../public/images/banner1.png');
+    background-image: url('../../public/images/banner\ 1.png');
 }
 
 #heroImage2 {
-    background-image: url('../../public/images/banner2.png');
+    background-image: url('../../public/images/banner\ 2.png');
+}
+
+@media (max-width: 640px) {
+    #heroImage1 {
+        background-image: url('../../public/images/mbanner.png');
+    }
+    
+    #heroImage2 {
+        background-image: url('../../public/images/mbanner\ 2.png');
+    }
 }
 
 /* Overlay */
@@ -295,6 +305,7 @@
     .property-info-bar {
         padding: 1.5rem;
         width: 100%;
+        margin-top: 50rem;
     }
 
     .property-details {
