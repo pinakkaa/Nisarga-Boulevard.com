@@ -1,661 +1,931 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devanahalli – Nisarga Boulevard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --bg: #fafaf8;
-      --surface: #ffffff;
-      --border: #e8e4de;
-      --border-mid: #d0c9be;
-      --accent: #2a2a2a;
-      --gold: #b07d4f;
-      --text: #1a1a1a;
-      --muted: #9a9590;
-      --light: #f3ede6;
-      --shadow-sm: rgba(0,0,0,0.06);
-      --shadow-md: rgba(0,0,0,0.13);
-    }
+      body {
+        background: #edeae4;
+        font-family: "Jost", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 64px 24px 80px;
-      overflow-x: hidden;
-    }
+      /* ── WRAPPER ── */
+      .wrapper {
+        display: flex;
+        max-width: 1060px;
+        width: 100%;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow:
+          0 30px 80px rgba(80, 50, 20, 0.18),
+          0 4px 16px rgba(80, 50, 20, 0.08);
+        background: #f5f2ee;
+        min-height: 580px;
+      }
 
-    /* subtle grid */
-    /* body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 52px 52px;
-      opacity: 0.5;
-      pointer-events: none;
-      z-index: 0;
-    } */
+      /* ── LEFT IMAGE PANEL ── */
+      .image-panel {
+        position: relative;
+        flex: 0 0 46%;
+        min-height: 520px;
+        overflow: hidden;
+      }
 
-    /* ── Header ────────────────────────────────── */
-    .gallery-header {
-      text-align: center;
-      margin-bottom: 56px;
-      position: relative;
-      z-index: 1;
-      animation: fadeUp 0.8s ease both;
-    }
+      .image-panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 8s ease;
+      }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+      .wrapper:hover .image-panel img {
+        transform: scale(1.04);
+      }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 10px;
-      font-weight: 300;
-      letter-spacing: 0.42em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 18px;
-    }
-    .eyebrow::before, .eyebrow::after {
-      content: '';
-      width: 30px; height: 1px;
-      background: var(--gold);
-      opacity: 0.55;
-    }
+      .image-panel::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(10, 10, 30, 0.45) 0%,
+          rgba(10, 10, 30, 0.1) 45%,
+          rgba(80, 40, 10, 0.55) 100%
+        );
+      }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 400;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-    }
-    h1 em { font-style: italic; color: var(--gold); }
+      .image-text {
+        position: absolute;
+        top: 34px;
+        left: 34px;
+        z-index: 2;
+      }
 
-    .tagline {
-      margin-top: 14px;
-      font-size: 12.5px;
-      font-weight: 300;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
+      .image-text .city {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 0.06em;
+        line-height: 1;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.4);
+      }
 
-    /* ── Slider ────────────────────────────────── */
-    .slider-section {
-      position: relative;
-      width: 100%;
-      max-width: 1160px;
-      z-index: 1;
-      animation: fadeUp 0.9s 0.12s ease both;
-    }
+      .image-text .sub {
+        font-family: "Jost", sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.35em;
+        color: #f0c96a;
+        margin-top: 6px;
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+      }
 
-    /* fade edges */
-    .slider-section::before, .slider-section::after {
-      content: '';
-      position: absolute;
-      top: 0; bottom: 60px; /* don't overlap footer */
-      width: 90px;
-      z-index: 5;
-      pointer-events: none;
-    }
-    .slider-section::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
-    .slider-section::after  { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
+      .image-badge {
+        position: absolute;
+        bottom: 30px;
+        left: 34px;
+        right: 34px;
+        z-index: 2;
+        display: flex;
+        gap: 10px;
+      }
 
-    .slider-viewport { overflow: hidden; }
+      .badge-pill {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50px;
+        padding: 6px 16px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #fff;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+      }
 
-    .slider-track {
-      display: flex;
-      gap: 20px;
-      will-change: transform;
-      /* transition injected by JS */
-    }
+      /* ── RIGHT CONTENT PANEL ── */
+      .content-panel {
+        flex: 1;
+        padding: 52px 52px 48px 52px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #f5f2ee;
+        position: relative;
+      }
 
-    /* ── Slide ─────────────────────────────────── */
-    .slide {
-      min-width: 300px;
-      flex-shrink: 0;
-      cursor: pointer;
-      border-radius: 6px;
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: 0 3px 14px var(--shadow-sm);
-      transition: box-shadow 0.35s ease, transform 0.35s ease;
-    }
-    .slide:hover {
-      box-shadow: 0 14px 44px var(--shadow-md);
-      transform: translateY(-5px);
-    }
+      .content-panel::before {
+        content: "";
+        position: absolute;
+        top: 52px;
+        left: 52px;
+        width: 48px;
+        height: 3px;
+        background: #7a4a10;
+        border-radius: 2px;
+      }
 
-    .slide-img-wrap {
-      overflow: hidden;
-      /* aspect-ratio: 3/4; */
-      position: relative;
-    }
-    .slide img {
-      width: 100%; 
-      height: 150px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease;
-      filter: brightness(0.95) saturate(0.92);
-    }
-    .slide:hover img { transform: scale(1.07); filter: brightness(1) saturate(1.06); }
+      .headline {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+        font-weight: 700;
+        color: #1e1409;
+        line-height: 1.15;
+        margin-top: 28px;
+        margin-bottom: 32px;
+      }
 
-    /* caption */
-    .slide-caption {
-      padding: 14px 16px 15px;
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .cap-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.88rem;
-      font-weight: 400;
-    }
-    .cap-sub {
-      font-size: 9.5px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-    .expand-btn {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      border: 1px solid var(--border-mid);
-      background: var(--light);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      margin-left: 10px;
-      transition: background 0.22s, border-color 0.22s;
-    }
-    .slide:hover .expand-btn { background: var(--gold); border-color: var(--gold); }
-    .expand-btn svg { width: 11px; height: 11px; fill: none; stroke: var(--muted); stroke-width: 1.8; transition: stroke 0.22s; }
-    .slide:hover .expand-btn svg { stroke: #fff; }
+      .block {
+        margin-bottom: 28px;
+        padding-left: 18px;
+        border-left: 2px solid #c49a52;
+      }
 
-    /* ── Arrows ────────────────────────────────── */
-    .arrow {
-      position: absolute;
-      top: calc(50% - 28px);
-      transform: translateY(-50%);
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      border: 1.5px solid var(--border-mid);
-      background: var(--surface);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 10;
-      box-shadow: 0 4px 18px var(--shadow-sm);
-      transition: border-color 0.25s, background 0.25s, box-shadow 0.25s, color 0.25s, transform 0.25s;
-      color: var(--text);
-    }
-    .arrow:hover {
-      border-color: var(--gold);
-      background: var(--gold);
-      color: #fff;
-      box-shadow: 0 8px 28px rgba(176,125,79,0.3);
-      transform: translateY(-50%) scale(1.1);
-    }
-    .arrow svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
-    .arrow-prev { left: -24px; }
-    .arrow-next { right: -24px; }
+      .block h3 {
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #7a4a10;
+        margin-bottom: 10px;
+      }
 
-    /* ── Footer dots ───────────────────────────── */
-    .slider-footer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 28px;
-    }
-    .dots { display: flex; gap: 7px; align-items: center; }
-    .dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--border-mid);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: background 0.28s, width 0.28s, border-radius 0.28s;
-    }
-    .dot.active { background: var(--gold); width: 22px; border-radius: 3px; }
-    .counter {
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      color: var(--muted);
-      font-weight: 300;
-    }
-    .counter strong { color: var(--gold); font-weight: 400; }
+      .block p {
+        font-size: 0.93rem;
+        font-weight: 300;
+        color: #4a3520;
+        line-height: 1.75;
+      }
 
-    /* ── Lightbox ──────────────────────────────── */
-    .lightbox {
-      position: fixed; inset: 0;
-      z-index: 2000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.38s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .lightbox.open { opacity: 1; pointer-events: all; }
+      .cta-row {
+        margin-top: 38px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
 
-    .lb-backdrop {
-      position: absolute; inset: 0;
-      background: rgba(250,250,248,0.91);
-      backdrop-filter: blur(24px) saturate(1.15);
-      cursor: pointer;
-    }
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: #7a4a10;
+        color: #fff;
+        font-family: "Jost", sans-serif;
+        font-size: 0.88rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        padding: 15px 32px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          background 0.25s,
+          transform 0.2s,
+          box-shadow 0.25s;
+        box-shadow: 0 6px 22px rgba(122, 74, 16, 0.3);
+      }
 
-    .lb-inner {
-      position: relative; z-index: 2;
-      display: flex; align-items: center; gap: 20px;
-      padding: 20px;
-      max-width: 980px; width: 100%;
-    }
+      .btn-primary:hover {
+        background: #5e3808;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(122, 74, 16, 0.38);
+      }
 
-    .lb-card {
-      position: relative;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      overflow: hidden;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.16);
-      max-width: 500px;
-      width: 100%;
-      margin: 0 auto;
-      transform: scale(0.92) translateY(10px);
-      transition: transform 0.45s cubic-bezier(0.34,1.45,0.64,1);
-    }
-    .lightbox.open .lb-card { transform: scale(1) translateY(0); }
+      .btn-primary svg {
+        flex-shrink: 0;
+        transition: transform 0.2s;
+      }
+      .btn-primary:hover svg {
+        transform: translateX(3px);
+      }
 
-    .lb-card img {
-      width: 100%;
-      max-height: 70vh;
-      object-fit: cover;
-      display: block;
-      transition: opacity 0.18s ease, transform 0.18s ease;
-    }
+      .note {
+        font-size: 0.78rem;
+        color: #9a7a5a;
+        font-weight: 400;
+      }
 
-    .lb-card-footer {
-      padding: 16px 20px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .lb-card-footer .cap-title { font-size: 1rem; }
-    .lb-page {
-      font-size: 10.5px;
-      letter-spacing: 0.22em;
-      color: var(--muted);
-      font-weight: 300;
-    }
-    .lb-page strong { color: var(--gold); font-weight: 400; }
+      @media (max-width: 760px) {
+        .wrapper {
+          flex-direction: column;
+          border-radius: 20px;
+        }
+        .image-panel {
+          flex: none;
+          min-height: 300px;
+          width: 100%;
+        }
+        .content-panel {
+          padding: 40px 28px 36px;
+        }
+        .content-panel::before {
+          top: 40px;
+          left: 28px;
+        }
+      }
 
-    /* close */
-    .lb-close {
-      position: absolute;
-      top: 14px; right: 14px;
-      z-index: 3;
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      border: 1.5px solid var(--border-mid);
-      background: var(--surface);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 12px var(--shadow-sm);
-      transition: background 0.2s, border-color 0.2s, transform 0.3s;
-    }
-    .lb-close:hover { background: #e04; border-color: #e04; transform: rotate(90deg) scale(1.1); }
-    .lb-close svg { width: 14px; height: 14px; fill: none; stroke: var(--muted); stroke-width: 2; transition: stroke 0.2s; }
-    .lb-close:hover svg { stroke: #fff; }
+      /* ════════════════════════════════════
+     MODAL
+  ════════════════════════════════════ */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 12, 4, 0.65);
+        backdrop-filter: blur(6px);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
 
-    .lb-arrow {
-      width: 50px; height: 50px;
-      border-radius: 50%;
-      border: 1.5px solid var(--border-mid);
-      background: var(--surface);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 16px var(--shadow-sm);
-      transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.22s, box-shadow 0.22s;
-      color: var(--text);
-    }
-    .lb-arrow:hover {
-      background: var(--gold); border-color: var(--gold); color: #fff;
-      box-shadow: 0 8px 28px rgba(176,125,79,0.3);
-      transform: scale(1.1);
-    }
-    .lb-arrow svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+      }
 
-    /* thumbnails */
-    .lb-thumbs {
-      position: absolute;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 7px;
-      z-index: 3;
-    }
-    .lb-thumb {
-      width: 44px; height: 30px;
-      border-radius: 3px;
-      overflow: hidden;
-      cursor: pointer;
-      opacity: 0.35;
-      border: 1.5px solid transparent;
-      transition: opacity 0.2s, transform 0.2s, border-color 0.2s;
-    }
-    .lb-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .lb-thumb.active { opacity: 1; border-color: var(--gold); transform: scaleY(1.14); }
-    .lb-thumb:hover:not(.active) { opacity: 0.65; }
+      .modal {
+        background: #f5f2ee;
+        border-radius: 24px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 40px 100px rgba(20, 10, 4, 0.35);
+        overflow: hidden;
+        transform: translateY(30px) scale(0.97);
+        transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        max-height: 92vh;
+        overflow-y: auto;
+      }
 
-    /* ── Responsive ────────────────────────────── */
-    @media (max-width: 900px) { .slide { min-width: 260px; } }
-    @media (max-width: 640px) {
-      .slide { min-width: 220px; }
-      .arrow-prev { left: -10px; }
-      .arrow-next { right: -10px; }
-      .lb-inner { gap: 10px; padding: 12px; }
-      .lb-arrow { width: 38px; height: 38px; }
-      .lb-thumbs { display: none; }
-      .slider-section::before, .slider-section::after { width: 44px; }
-    }
-  </style>
-</head>
-<body>
+      .modal-overlay.open .modal {
+        transform: translateY(0) scale(1);
+      }
 
-  <header class="gallery-header">
-    <p class="eyebrow">Visual Collection</p>
-    <h1>Our <em>Gallery</em></h1>
-    <!-- <p class="tagline">Click any image to view full screen &nbsp;·&nbsp; Arrows or swipe to explore</p> -->
-  </header>
+      /* header */
+      .modal-header {
+        background: #7a4a10;
+        padding: 28px 32px 24px;
+        position: relative;
+      }
 
-  <section class="slider-section">
-    <button class="arrow arrow-prev" id="prevBtn" aria-label="Previous">
-      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
+      .modal-header .mh-line {
+        width: 36px;
+        height: 2px;
+        background: #f0c96a;
+        border-radius: 2px;
+        margin-bottom: 12px;
+      }
 
-    <div class="slider-viewport">
-      <div class="slider-track" id="sliderTrack"></div>
-    </div>
+      .modal-header h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.65rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.2;
+      }
 
-    <button class="arrow arrow-next" id="nextBtn" aria-label="Next">
-      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
+      .modal-header p {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.72);
+        margin-top: 6px;
+        font-weight: 300;
+        letter-spacing: 0.03em;
+      }
 
-    <div class="slider-footer">
-      <div class="dots" id="dots"></div>
-      <p class="counter" id="counter"></p>
-    </div>
-  </section>
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 22px;
+        background: rgba(255, 255, 255, 0.14);
+        border: none;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #fff;
+        transition: background 0.2s;
+      }
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-    <div class="lb-backdrop" id="lbBackdrop"></div>
+      .modal-close:hover {
+        background: rgba(255, 255, 255, 0.26);
+      }
 
-    <button class="lb-close" id="lbClose" aria-label="Close">
-      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+      /* body */
+      .modal-body {
+        padding: 30px 32px 34px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
 
-    <div class="lb-inner">
-      <button class="lb-arrow" id="lbPrev" aria-label="Previous">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
+      .field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
 
-      <div class="lb-card">
-        <img id="lbImg" src="" alt="" />
-        <div class="lb-card-footer">
-          <div>
-            <p class="cap-title" id="lbTitle"></p>
-            <p class="cap-sub"  id="lbSub"></p>
-          </div>
-          <p class="lb-page"><strong id="lbCur">1</strong> / <span id="lbTot">1</span></p>
+      .field-group label {
+        font-size: 0.74rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #7a4a10;
+      }
+
+      .field-group input,
+      .field-group textarea,
+      .field-group select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1.5px solid #ddd0c0;
+        border-radius: 10px;
+        background: #fff;
+        font-family: "Jost", sans-serif;
+        font-size: 0.92rem;
+        color: #2a1a0a;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+
+      .field-group input:focus,
+      .field-group textarea:focus,
+      .field-group select:focus {
+        border-color: #7a4a10;
+        box-shadow: 0 0 0 3px rgba(122, 74, 16, 0.12);
+      }
+
+      .field-group input.error,
+      .field-group textarea.error,
+      .phone-row input.error {
+        border-color: #c0392b;
+        box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+      }
+
+      .error-msg {
+        font-size: 0.72rem;
+        color: #c0392b;
+        display: none;
+        margin-top: 1px;
+      }
+
+      .error-msg.show {
+        display: block;
+      }
+
+      /* phone row */
+      .phone-row {
+        display: flex;
+        gap: 10px;
+      }
+      .phone-row select {
+        flex: 0 0 118px;
+      }
+      .phone-row input {
+        flex: 1;
+      }
+
+      .field-group textarea {
+        resize: vertical;
+        min-height: 90px;
+      }
+
+      /* submit */
+      .btn-submit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: #7a4a10;
+        color: #fff;
+        font-family: "Jost", sans-serif;
+        font-size: 0.92rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        padding: 15px 28px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 4px;
+        transition:
+          background 0.25s,
+          transform 0.2s,
+          box-shadow 0.25s;
+        box-shadow: 0 6px 22px rgba(122, 74, 16, 0.28);
+      }
+
+      .btn-submit:hover:not(:disabled) {
+        background: #5e3808;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 28px rgba(122, 74, 16, 0.36);
+      }
+
+      .btn-submit:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+
+      .spinner {
+        width: 18px;
+        height: 18px;
+        border: 2.5px solid rgba(255, 255, 255, 0.35);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        display: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* success */
+      .success-view {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 44px 32px 48px;
+        gap: 16px;
+      }
+
+      .success-icon {
+        width: 72px;
+        height: 72px;
+        background: #f0e8d8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+      }
+
+      .success-icon svg {
+        color: #7a4a10;
+      }
+
+      .success-view h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: #1e1409;
+      }
+
+      .success-view p {
+        font-size: 0.9rem;
+        color: #6a5040;
+        font-weight: 300;
+        line-height: 1.7;
+        max-width: 320px;
+      }
+
+      .success-view .dl-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #f0e8d8;
+        border: 1px solid #ddd0c0;
+        padding: 9px 20px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        color: #5e3808;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+      }
+
+      .btn-close-success {
+        margin-top: 6px;
+        background: none;
+        border: 1.5px solid #c49a52;
+        color: #7a4a10;
+        font-family: "Jost", sans-serif;
+        font-size: 0.84rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        padding: 11px 28px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+
+      .btn-close-success:hover {
+        background: #7a4a10;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── MAIN SECTION ── -->
+    <div class="wrapper">
+      <div class="image-panel">
+        <img
+          src="https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&q=80"
+          alt="Devanahalli Bangalore aerial view"
+          onerror="
+            this.style.background = 'linear-gradient(135deg,#4a2800,#c49a52)';
+            this.removeAttribute('src');
+          "
+        />
+        <div class="image-text">
+          <div class="city">DEVANAHALLI</div>
+          <div class="sub">BANGALORE</div>
+        </div>
+        <div class="image-badge">
+          <span class="badge-pill">STRR Corridor</span>
+          <span class="badge-pill">Growth Zone</span>
         </div>
       </div>
 
-      <button class="lb-arrow" id="lbNext" aria-label="Next">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+      <div class="content-panel">
+        <h2 class="headline">Own The Future<br />Land Value. Today.</h2>
+
+        <div class="block">
+          <h3>Cities Expand. Land Appreciates</h3>
+          <p>
+            Nisarga Boulevard stands at the threshold of Greater Bengaluru's
+            next expansion corridor, where infrastructure, connectivity, and
+            long-term urban planning are shaping the city's future geography.
+            Owning land here is taking a strategic position in Bengaluru's next
+            phase.
+          </p>
+        </div>
+
+        <div class="block">
+          <h3>Why Nisarga is at the Centre of Greater Bengaluru?</h3>
+          <p>
+            Located near Thellahalli Gate along the STRR corridor, Nisarga
+            Boulevard is situated in one of the city's most promising growth
+            zones. The surrounding region is rapidly transforming.
+          </p>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn-primary" id="openModalBtn">
+            Download Brochure
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </button>
+          <!-- <span class="note">Free · No commitment required</span> -->
+        </div>
+      </div>
     </div>
 
-    <div class="lb-thumbs" id="lbThumbs"></div>
-  </div>
-
-  <script>
-    /* ── Data ──────────────────────────────────────────────────────────── */
-    const images = [
-      { src:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80', title:'Mountain Solitude', sub:'Landscape · Alps'      },
-      { src:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=900&q=80', title:'Forest Path',       sub:'Nature · Woodland'     },
-      { src:'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=900&q=80', title:'Golden Hour',       sub:'Landscape · Dusk'      },
-      { src:'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=900&q=80', title:'Cascade Falls',     sub:'Nature · Water'        },
-      { src:'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80', title:'Open Fields',       sub:'Landscape · Aerial'    },
-      { src:'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=900&q=80', title:'Desert Bloom',      sub:'Nature · Arid'         },
-      { src:'https://images.unsplash.com/photo-1520116468816-95b69f847357?w=900&q=80', title:'Ocean Stillness',   sub:'Seascape · Shore'      },
-      { src:'https://images.unsplash.com/photo-1444464666168-49d633b86797?w=900&q=80', title:'Feathered Flight',  sub:'Wildlife · Birds'      },
-      { src:'https://images.unsplash.com/photo-1484950763426-56b5bf172dbb?w=900&q=80', title:'Morning Mist',      sub:'Landscape · Dawn'      },
-    ];
-
-    /* ── Infinite Slider ────────────────────────────────────────────────── */
-    const ORIG   = images.length;
-    const CLONES = 4;   // clones on each side
-    const GAP    = 20;
-
-    const track   = document.getElementById('sliderTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dotsEl  = document.getElementById('dots');
-    const counterEl = document.getElementById('counter');
-
-    // full set: [clone-tail … original … clone-head]
-    const fullSet = [
-      ...images.slice(-CLONES),
-      ...images,
-      ...images.slice(0, CLONES),
-    ];
-
-    // Render slides
-    fullSet.forEach((img, i) => {
-      const realIdx = ((i - CLONES) % ORIG + ORIG) % ORIG;
-      const slide = document.createElement('div');
-      slide.className = 'slide';
-      slide.innerHTML = `
-        <div class="slide-img-wrap">
-          <img src="${img.src}" alt="${img.title}" loading="lazy" />
+    <!-- ── MODAL ── -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div
+        class="modal"
+        id="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal-header">
+          <div class="mh-line"></div>
+          <h2 id="modalTitle">Get Your Free Brochure</h2>
+          <p>Fill in your details — download starts instantly.</p>
+          <button class="modal-close" id="closeModalBtn" aria-label="Close">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
         </div>
-        `;
-      slide.addEventListener('click', () => openLightbox(realIdx));
-      track.appendChild(slide);
-    });
 
-    /* ── State ─────────────────────────────────────────────────────────── */
-    let curReal     = 0;      // 0-based real index
-    let isAnimating = false;
-    let autoTimer;
+        <!-- Form -->
+        <div class="modal-body" id="formView">
+          <!-- Name -->
+          <div class="field-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              placeholder="e.g. Arjun Sharma"
+              autocomplete="name"
+            />
+            <span class="error-msg" id="nameErr"
+              >Please enter your full name.</span
+            >
+          </div>
 
-    function slideW() {
-      const s = track.querySelector('.slide');
-      return s ? s.offsetWidth + GAP : 320;
-    }
+          <!-- Phone -->
+          <div class="field-group">
+            <label>Mobile Number</label>
+            <div class="phone-row">
+              <select id="countryCode" aria-label="Country code">
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+971">🇦🇪 +971</option>
+                <option value="+65">🇸🇬 +65</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+81">🇯🇵 +81</option>
+                <option value="+86">🇨🇳 +86</option>
+                <option value="+60">🇲🇾 +60</option>
+                <option value="+966">🇸🇦 +966</option>
+                <option value="+1-CA">🇨🇦 +1</option>
+                <option value="+55">🇧🇷 +55</option>
+                <option value="+27">🇿🇦 +27</option>
+              </select>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="9876543210"
+                autocomplete="tel"
+              />
+            </div>
+            <span class="error-msg" id="phoneErr"
+              >Enter a valid number (digits only, 6–15 digits).</span
+            >
+          </div>
 
-    // track index of a real index
-    function t(real) { return real + CLONES; }
+          <!-- Email -->
+          <div class="field-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+            />
+            <span class="error-msg" id="emailErr"
+              >Please enter a valid email address.</span
+            >
+          </div>
 
-    function applyTransform(trackIdx, animate) {
-      if (animate) {
-        track.style.transition = 'transform 0.60s cubic-bezier(0.77,0,0.175,1)';
-      } else {
-        track.style.transition = 'none';
-      }
-      track.style.transform = `translateX(-${trackIdx * slideW()}px)`;
-    }
+          <!-- Message -->
+          <div class="field-group">
+            <label for="message">
+              Message
+              <span
+                style="
+                  font-weight: 300;
+                  text-transform: none;
+                  letter-spacing: 0;
+                  color: #9a7a5a;
+                  font-size: 0.72rem;
+                "
+              >
+                — optional</span
+              >
+            </label>
+            <textarea
+              id="message"
+              placeholder="Any questions or specific requirements?"
+            ></textarea>
+          </div>
 
-    function refreshUI() {
-      // dots
-      document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === curReal));
-      // counter
-    }
+          <button class="btn-submit" id="submitBtn">
+            <span id="btnLabel">Download Brochure</span>
+            <div class="spinner" id="spinner"></div>
+            <svg
+              id="btnIcon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </button>
+        </div>
 
-    function goDir(dir) {
-      if (isAnimating) return;
-      isAnimating = true;
+        <!-- Success -->
+        <div class="success-view" id="successView">
+          <div class="success-icon">
+            <svg
+              width="34"
+              height="34"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          <h3>Thank You!</h3>
+          <p>
+            Your brochure download has started. Our team may reach out with more
+            details about Nisarga Boulevard.
+          </p>
+          <div class="dl-badge">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            nisarga-boulevard.pdf
+          </div>
+          <button class="btn-close-success" id="closeSuccessBtn">Close</button>
+        </div>
+      </div>
+    </div>
 
-      const fromTrack = t(curReal);
-      const toTrack   = fromTrack + dir;
+    <script>
+      (function () {
+        const overlay = document.getElementById("modalOverlay");
+        const openBtn = document.getElementById("openModalBtn");
+        const closeBtn = document.getElementById("closeModalBtn");
+        const closeSuccBtn = document.getElementById("closeSuccessBtn");
+        const submitBtn = document.getElementById("submitBtn");
+        const formView = document.getElementById("formView");
+        const successView = document.getElementById("successView");
+        const spinner = document.getElementById("spinner");
+        const btnLabel = document.getElementById("btnLabel");
+        const btnIcon = document.getElementById("btnIcon");
 
-      applyTransform(toTrack, true);
+        // ── Open ──
+        openBtn.addEventListener("click", () => {
+          overlay.classList.add("open");
+          document.body.style.overflow = "hidden";
+          setTimeout(() => document.getElementById("fullName").focus(), 350);
+        });
 
-      setTimeout(() => {
-        curReal = (curReal + dir + ORIG) % ORIG;
-        applyTransform(t(curReal), false);
-        isAnimating = false;
-        refreshUI();
-      }, 620);
-    }
+        // ── Close ──
+        function closeModal() {
+          overlay.classList.remove("open");
+          document.body.style.overflow = "";
+        }
 
-    // initialise
-    applyTransform(t(curReal), false);
-    refreshUI();
+        closeBtn.addEventListener("click", closeModal);
+        closeSuccBtn.addEventListener("click", closeModal);
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) closeModal();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeModal();
+        });
 
-    // Build dots
-    for (let i = 0; i < ORIG; i++) {
-      const d = document.createElement('button');
-      d.className = 'dot' + (i === curReal ? ' active' : '');
-      d.setAttribute('aria-label', `Image ${i + 1}`);
-      d.addEventListener('click', () => {
-        if (isAnimating) return;
-        curReal = i;
-        applyTransform(t(curReal), false);
-        refreshUI();
-      });
-      dotsEl.appendChild(d);
-    }
+        // Reset form when overlay finishes closing
+        overlay.addEventListener("transitionend", () => {
+          if (!overlay.classList.contains("open")) resetForm();
+        });
 
-    prevBtn.addEventListener('click', () => goDir(-1));
-    nextBtn.addEventListener('click', () => goDir(1));
+        function resetForm() {
+          ["fullName", "phone", "email", "message"].forEach((id) => {
+            document.getElementById(id).value = "";
+          });
+          ["fullName", "phone", "email"].forEach((id) => {
+            document.getElementById(id).classList.remove("error");
+          });
+          ["nameErr", "phoneErr", "emailErr"].forEach((id) => {
+            document.getElementById(id).classList.remove("show");
+          });
+          formView.style.display = "";
+          successView.style.display = "none";
+          submitBtn.disabled = false;
+          btnLabel.textContent = "Download Brochure";
+          spinner.style.display = "none";
+          btnIcon.style.display = "";
+        }
 
-    // Auto-play
-    function startAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => goDir(1), 3800); }
-    function stopAuto()  { clearInterval(autoTimer); }
-    startAuto();
-    track.parentElement.addEventListener('mouseenter', stopAuto);
-    track.parentElement.addEventListener('mouseleave', startAuto);
+        // ── Live error clear ──
+        [
+          ["fullName", "nameErr"],
+          ["phone", "phoneErr"],
+          ["email", "emailErr"],
+        ].forEach(([id, errId]) => {
+          document.getElementById(id).addEventListener("input", () => {
+            document.getElementById(id).classList.remove("error");
+            document.getElementById(errId).classList.remove("show");
+          });
+        });
 
-    // Keyboard
-    document.addEventListener('keydown', e => {
-      if (document.getElementById('lightbox').classList.contains('open')) return;
-      if (e.key === 'ArrowLeft')  goDir(-1);
-      if (e.key === 'ArrowRight') goDir(1);
-    });
+        // ── Validation ──
+        function validate() {
+          let ok = true;
+          const name = document.getElementById("fullName");
+          const phone = document.getElementById("phone");
+          const email = document.getElementById("email");
 
-    // Touch swipe
-    let tx0 = 0;
-    track.addEventListener('touchstart', e => { tx0 = e.touches[0].clientX; stopAuto(); }, { passive: true });
-    track.addEventListener('touchend',   e => {
-      const d = tx0 - e.changedTouches[0].clientX;
-      if (Math.abs(d) > 40) goDir(d > 0 ? 1 : -1);
-      startAuto();
-    });
+          // Name
+          if (!name.value.trim() || name.value.trim().length < 2) {
+            name.classList.add("error");
+            document.getElementById("nameErr").classList.add("show");
+            ok = false;
+          }
 
-    window.addEventListener('resize', () => applyTransform(t(curReal), false));
+          // Phone
+          const phoneVal = phone.value.trim().replace(/\s|-/g, "");
+          if (!phoneVal || !/^\d{6,15}$/.test(phoneVal)) {
+            phone.classList.add("error");
+            document.getElementById("phoneErr").classList.add("show");
+            ok = false;
+          }
 
-    /* ── Lightbox ───────────────────────────────────────────────────────── */
-    const lightbox = document.getElementById('lightbox');
-    const lbImg    = document.getElementById('lbImg');
-    const lbTitle  = document.getElementById('lbTitle');
-    const lbSub    = document.getElementById('lbSub');
-    const lbCur    = document.getElementById('lbCur');
-    const lbTot    = document.getElementById('lbTot');
-    const lbThumbs = document.getElementById('lbThumbs');
-    const lbPrev   = document.getElementById('lbPrev');
-    const lbNext   = document.getElementById('lbNext');
-    let lbIdx = 0;
+          // Email
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+            email.classList.add("error");
+            document.getElementById("emailErr").classList.add("show");
+            ok = false;
+          }
 
-    lbTot.textContent = ORIG;
+          return ok;
+        }
 
-    // Build thumbnails
-    images.forEach((img, i) => {
-      const t2 = document.createElement('div');
-      t2.className = 'lb-thumb';
-      t2.innerHTML = `<img src="${img.src}" alt="${img.title}" loading="lazy" />`;
-      t2.addEventListener('click', () => setLightbox(i));
-      lbThumbs.appendChild(t2);
-    });
+        // ── Submit ──
+        submitBtn.addEventListener("click", () => {
+          if (!validate()) return;
 
-    function setLightbox(idx) {
-      lbIdx = (idx + ORIG) % ORIG;
-      const img = images[lbIdx];
+          // Loading state
+          submitBtn.disabled = true;
+          btnLabel.textContent = "Preparing your brochure…";
+          spinner.style.display = "block";
+          btnIcon.style.display = "none";
 
-      lbImg.style.opacity   = '0';
-      lbImg.style.transform = 'scale(0.97)';
-      lbImg.style.transition = 'opacity 0.18s, transform 0.18s';
+          setTimeout(() => {
+            // Trigger PDF download
+            const a = document.createElement("a");
+            a.href = "./nisarga-boulevard.pdf";
+            a.download = "nisarga-boulevard.pdf";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
 
-      setTimeout(() => {
-        lbImg.src = img.src; lbImg.alt = img.title;
-        lbTitle.textContent = img.title;
-        lbSub.textContent   = img.sub;
-        lbCur.textContent   = lbIdx + 1;
-        lbImg.style.opacity = '1'; lbImg.style.transform = 'scale(1)';
-      }, 170);
-
-      document.querySelectorAll('.lb-thumb').forEach((el, i) => el.classList.toggle('active', i === lbIdx));
-    }
-
-    function openLightbox(idx) {
-      setLightbox(idx);
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      stopAuto();
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-      startAuto();
-    }
-
-    document.getElementById('lbClose').addEventListener('click', closeLightbox);
-    document.getElementById('lbBackdrop').addEventListener('click', closeLightbox);
-    lbPrev.addEventListener('click', () => setLightbox(lbIdx - 1));
-    lbNext.addEventListener('click', () => setLightbox(lbIdx + 1));
-
-    document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape')     closeLightbox();
-      if (e.key === 'ArrowLeft')  setLightbox(lbIdx - 1);
-      if (e.key === 'ArrowRight') setLightbox(lbIdx + 1);
-    });
-
-    let lbTx = 0;
-    lightbox.addEventListener('touchstart', e => { lbTx = e.touches[0].clientX; }, { passive: true });
-    lightbox.addEventListener('touchend',   e => {
-      const d = lbTx - e.changedTouches[0].clientX;
-      if (Math.abs(d) > 40) setLightbox(lbIdx + (d > 0 ? 1 : -1));
-    });
-  </script>
-</body>
+            // Show success
+            formView.style.display = "none";
+            successView.style.display = "flex";
+          }, 1500);
+        });
+      })();
+    </script>
+  </body>
 </html>

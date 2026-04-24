@@ -1754,7 +1754,7 @@
             </div>
 
             <!-- Enquire Button -->
-            <div class="enquire-button" id="openModalBtn">ENQUIRE</div>
+            <a href="#Enquiry" class="enquire-button">ENQUIRE</a>
 
             <!-- Mobile Menu Icon -->
             <button class="menu-icon" id="menuToggle" aria-label="Toggle menu">
@@ -1911,6 +1911,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- ── MODAL ── -->
     <div class="modal-overlay" id="modalOverlay">
@@ -2720,11 +2722,9 @@
             const successMsg = document.getElementById("formSuccess");
             const errorMsg = document.getElementById("formError");
 
-            // Hide previous messages
             successMsg.style.display = "none";
             errorMsg.style.display = "none";
 
-            // Gather form data
             const payload = {
                 name: document.getElementById("fullName").value.trim(),
                 email: document.getElementById("email").value.trim(),
@@ -2733,18 +2733,11 @@
                 query: document.getElementById("query").value.trim()
             };
 
-            // Basic validation
-            // if (! payload.name || ! payload.email || ! payload.phone) {
-            //     errorMsg.textContent = "❌ Please fill in all required fields.";
-            //     errorMsg.style.display = "block";
-            //     return;
-            // }
-
-            // Disable button to prevent double submission
+     
             submitBtn.disabled = true;
             submitBtn.textContent = "Submitting...";
 
-            try { // 🔁 Replace with your actual Google Cloud Function URL
+            try {
                 const CLOUD_FUNCTION_URL = "https://emailjsfuntions-428145106157.asia-south1.run.app/Nisarga-Boulevard";
 
                 const response = await fetch(CLOUD_FUNCTION_URL, {
